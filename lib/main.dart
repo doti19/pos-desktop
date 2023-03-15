@@ -1,120 +1,183 @@
 import 'package:flutter/material.dart';
 
-import 'themes/theme.dart';
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: darkTheme4,
-      // theme: darkTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'POS Food',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MainPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
+  String pageActive = 'Home';
+
+  _pageView() {
+    switch (pageActive) {
+      case 'Home':
+        return const HomePage();
+      case 'Menu':
+        return Container();
+      case 'History':
+        return Container();
+      case 'Promos':
+        return Container();
+      case 'Settings':
+        return Container();
+
+      default:
+        return const HomePage();
+    }
+  }
+
+  _setPage(String page) {
+    setState(() {
+      pageActive = page;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      backgroundColor: const Color(0xff1f2029),
+      body: Row(
+        children: [
+          Container(
+            width: 70,
+            padding: const EdgeInsets.only(top: 24, right: 12, left: 12),
+            height: MediaQuery.of(context).size.height,
+            child: _sideMenu(),
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(top: 24, right: 12),
+              padding: const EdgeInsets.only(top: 12, right: 12, left: 12),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12)),
+                color: Color(0xff17181f),
+              ),
+              child: _pageView(),
+            ),
+          ),
+        ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Container(
-              width: 30,
-              height: 30,
+    );
+  }
+
+  Widget _sideMenu() {
+    return Column(children: [
+      _logo(),
+      const SizedBox(height: 20),
+      Expanded(
+        child: ListView(
+          children: [
+            _itemMenu(
+              menu: 'Home',
+              icon: Icons.rocket_sharp,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('1Elevated Button'),
+            _itemMenu(
+              menu: 'Menu',
+              icon: Icons.format_list_bulleted_rounded,
             ),
-            OutlinedButton(
-              onPressed: () {},
-              child: Text('Outlined Button'),
+            _itemMenu(
+              menu: 'History',
+              icon: Icons.history_toggle_off_rounded,
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text('Text Button'),
+            _itemMenu(
+              menu: 'Promos',
+              icon: Icons.discount_outlined,
             ),
-            Text(
-              'display large',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            Text(
-              'display medium',
-              style: Theme.of(context).textTheme.displayMedium,
-            ),
-            Text(
-              'display small',
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
-            Text(
-              'headline medium',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Text(
-              'Headline small',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            Text(
-              'title large',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            Text(
-              'title medium',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
-              'title small',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-            Text(
-              'body large',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            Text(
-              'body medium',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            Text(
-              'body small',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            Text(
-              'label large',
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            Text(
-              'label medium',
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
-            Text(
-              'label small',
-              style: Theme.of(context).textTheme.labelSmall,
+            _itemMenu(
+              menu: 'Settings',
+              icon: Icons.sports_soccer_outlined,
             ),
           ],
         ),
+      ),
+    ]);
+  }
+
+  Widget _logo() {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.deepOrangeAccent,
+          ),
+          child: const Icon(
+            Icons.fastfood,
+            color: Colors.white,
+            size: 14,
+          ),
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          'POSFood',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 8,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _itemMenu({required String menu, required IconData icon}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 9),
+      child: GestureDetector(
+        onTap: () => _setPage(menu),
+        child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: AnimatedContainer(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: pageActive == menu
+                    ? Colors.deepOrangeAccent
+                    : Colors.transparent,
+              ),
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.slowMiddle,
+              child: Column(
+                children: [
+                  Icon(
+                    icon,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    menu,
+                    style: const TextStyle(color: Colors.white, fontSize: 10),
+                  ),
+                ],
+              ),
+            )),
       ),
     );
   }
