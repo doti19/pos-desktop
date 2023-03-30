@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pos_desktop2/config/myColors.dart';
+import 'package:pos_desktop2/config/my_colors.dart';
 
 class ItemOrder extends StatelessWidget {
   final String image;

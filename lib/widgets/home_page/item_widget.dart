@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/myColors.dart';
+import '../../config/my_colors.dart';
 
 class Item extends StatelessWidget {
   final String image;

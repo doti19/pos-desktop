@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 
-import '../../config/myColors.dart';
+import '../../config/my_colors.dart';
 
 class ItemMenuWidget extends StatelessWidget {
   final String menu;
   final IconData icon;
   final bool isActive;
-  const ItemMenuWidget({required this.menu, required this.icon, required this.isActive, super.key});
+  const ItemMenuWidget(
+      {required this.menu,
+      required this.icon,
+      required this.isActive,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
-   return Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(vertical: 9),
       child: GestureDetector(
-        onTap: /*() => _setPage(menu)*/ null,
+        onTap: () {
+          Navigator.pushNamed(context, '/${menu.toLowerCase()}');
+        },
         child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: AnimatedContainer(
@@ -21,9 +27,7 @@ class ItemMenuWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 // color: Colors.transparent,
-                color: isActive
-                    ? MyColors.primary
-                    : Colors.transparent,
+                color: isActive ? MyColors.primary : Colors.transparent,
               ),
               duration: const Duration(milliseconds: 300),
               curve: Curves.slowMiddle,

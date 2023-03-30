@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/myColors.dart';
+import '../../config/my_colors.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
@@ -23,7 +23,7 @@ class LogoWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         const Text(
-          'POSFood',
+          'OurCompany',
           style: TextStyle(
             color: Colors.white,
             fontSize: 8,

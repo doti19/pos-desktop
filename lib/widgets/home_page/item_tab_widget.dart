@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/myColors.dart';
+import '../../config/my_colors.dart';
 
 class ItemTab extends StatelessWidget {
   final String icon;
@@ -11,7 +11,7 @@ class ItemTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
+      width: 200,
       margin: const EdgeInsets.only(right: 26),
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
       decoration: BoxDecoration(
@@ -23,7 +23,7 @@ class ItemTab extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset(
+          Image.asset( 
             icon,
             width: 38,
           ),
