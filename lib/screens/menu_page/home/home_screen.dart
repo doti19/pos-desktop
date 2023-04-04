@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../config/my_colors.dart';
 import '../../../responsive.dart';
 import '../dashboard/dashboard_screen.dart';
+import '../document/documents_screen.dart';
 import 'components/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       //key: context.read<MenuController>().scaffoldKey,
       appBar: AppBar(
         backgroundColor: MyColors.background,
-        title: const Text("Dashboard", style: TextStyle(color: Colors.white)),
+        title: const Text("Management", style: TextStyle(color: Colors.white)),
       ),
       drawer: Responsive.isMobile(context) ? const SideMenu() : null,
       body: SafeArea(
@@ -29,7 +30,8 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               // It takes 5/6 part of the screen
               flex: 5,
-              child: DashboardScreen(),
+              // child: DashboardScreen(),
+              child: DocumentsScreen(),
             ),
           ],
         ),
