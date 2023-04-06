@@ -137,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  data_table_2:
+    dependency: "direct main"
+    description:
+      name: data_table_2
+      sha256: daea1a67128e88b6b5537ee0752c67ecdc2fba9cd9303b3554361c648549618d
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.2"
   desktop:
     dependency: "direct main"
     description:
@@ -145,6 +153,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  dropdown_search:
+    dependency: "direct main"
+    description:
+      name: dropdown_search
+      sha256: "55106e8290acaa97ed15bea1fdad82c3cf0c248dd410e651f5a8ac6870f783ab"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.6"
   easy_sidemenu:
     dependency: "direct main"
     description:
@@ -283,6 +299,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      sha256: "1312314293acceb65b92754298754801b0e1f26a1845833b740b30415bbbcf07"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.2"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -493,6 +517,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.0"
+  search_choices:
+    dependency: "direct main"
+    description:
+      name: search_choices
+      sha256: "4c379407ea642613669f788ec9b41cfb156f55800e8f69c727478c37db025c47"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.5"
+  searchable_paginated_dropdown:
+    dependency: "direct main"
+    description:
+      name: searchable_paginated_dropdown
+      sha256: "52fc876efb463bdbc727fe02e3a99316ad41b9dfe2b9ffb23c6963db04a2a23e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -626,6 +666,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: "5ade7463887e45e91df497a071fe3a77c0cebfad81304d47fc1e1b5e886df19f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "21.1.38"
+  syncfusion_flutter_datagrid:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_datagrid
+      sha256: "2ee350c0ac187432c6958abb3a0e70231790ad2fd7841bf8c167539006fde1b0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "21.1.38"
   synchronized:
     dependency: transitive
     description:

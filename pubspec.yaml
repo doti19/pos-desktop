@@ -66,6 +66,12 @@ dependencies:
   flutter_svg: ^2.0.4
   flutter_icons_null_safety: ^1.1.0
   tabbed_view: ^1.16.0+1
+  flutter_staggered_grid_view: ^0.6.2
+  searchable_paginated_dropdown: ^1.1.0
+  dropdown_search: ^5.0.6
+  search_choices: ^2.2.5
+  data_table_2: ^2.4.2
+  syncfusion_flutter_datagrid: ^21.1.38
   # flutter_icons: ^1.1.0
   # json_theme: ^5.0.0+5
 
