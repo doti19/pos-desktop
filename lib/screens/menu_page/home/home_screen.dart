@@ -4,6 +4,7 @@ import '../../../config/my_colors.dart';
 import '../../../responsive.dart';
 import '../dashboard/dashboard_screen.dart';
 import '../document/documents_screen.dart';
+import '../products/products_screen.dart';
 import 'components/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,7 +32,8 @@ class HomeScreen extends StatelessWidget {
               // It takes 5/6 part of the screen
               flex: 5,
               // child: DashboardScreen(),
-              child: DocumentsScreen(),
+              // child: DocumentsScreen(),
+              child: ProductsScreen(),
             ),
           ],
         ),

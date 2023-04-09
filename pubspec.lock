@@ -291,6 +291,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
+  flutter_simple_treeview:
+    dependency: "direct main"
+    description:
+      name: flutter_simple_treeview
+      sha256: ad4978d2668dd078d3a09966832da111bef9102dd636e572c50c80133b7ff4d9
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -320,6 +328,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_treeview:
+    dependency: "direct main"
+    description:
+      name: flutter_treeview
+      sha256: ce7a66452e02877700890cb674773ea0af28d914192acfb5bf55a50ce35b5819
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7+1"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -493,6 +509,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.0"
+  resizable_widget:
+    dependency: "direct main"
+    description:
+      name: resizable_widget
+      sha256: db2919754b93f386b9b3fb15e9f48f6c9d6d41f00a24397629133c99df86606a
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   responsive_navigation:
     dependency: "direct main"
     description:

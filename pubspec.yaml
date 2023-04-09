@@ -72,6 +72,9 @@ dependencies:
   search_choices: ^2.2.5
   data_table_2: ^2.4.2
   syncfusion_flutter_datagrid: ^21.1.38
+  resizable_widget: ^1.0.5
+  flutter_simple_treeview: ^3.0.2
+  flutter_treeview: ^1.0.7+1
   # flutter_icons: ^1.1.0
   # json_theme: ^5.0.0+5
 
