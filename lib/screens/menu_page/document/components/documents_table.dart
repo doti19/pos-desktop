@@ -16,6 +16,7 @@ class _DocumentsTableState extends State<DocumentsTable> {
   @override
   void initState() {
     super.initState();
+    WidgetsFlutterBinding.ensureInitialized();
     employees = getEmployees();
     employeeDataSource = EmployeeDataSource(employees: employees);
   }

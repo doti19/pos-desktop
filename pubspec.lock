@@ -557,6 +557,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  separated_row:
+    dependency: "direct main"
+    description:
+      name: separated_row
+      sha256: afaef869c3640669e31a5fade1677d4580e0a556cc2b1ec8f443393dd9a1b343
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   shared_preferences:
     dependency: "direct main"
     description:
