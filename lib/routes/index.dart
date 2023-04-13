@@ -5,7 +5,9 @@
 import 'package:flutter/material.dart';
 
 import '../pages/menu_page.dart';
+import '../screens/history_screen/history_screen.dart';
 import '../screens/menu_page/home/home_screen.dart';
+import '../screens/menu_page/products/products_screen.dart';
 import '../splash_screen.dart';
 import '../pages/index.dart';
 
@@ -19,6 +21,11 @@ Route routes(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => Index());
     case '/menu':
       return MaterialPageRoute(builder: (_) => HomeScreen());
+    case '/history':
+      return MaterialPageRoute(builder: (_) => HistoryScreen());
+    case '/products':
+      return MaterialPageRoute(builder: (_) => ProductsScreen());
+
     // return MaterialPageRoute(builder: (_) => MenuPage());
     case '/auth':
     // return MaterialPageRoute(builder: (_) => AuthenticationScreen());

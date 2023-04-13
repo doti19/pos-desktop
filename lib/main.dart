@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pos_desktop2/pages/index.dart';
 
-
 import 'app.dart';
 import 'utils/app_state_notifier.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
+  // MaterialPageRoute.debugEnableFadingRoutes = true;
   runApp(
     ChangeNotifierProvider<AppStateNotifier>(
       create: (_) => AppStateNotifier(),
@@ -33,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

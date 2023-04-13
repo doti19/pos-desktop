@@ -13,6 +13,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: MyColors.background,
+        title:
+            const Text("Splash Screen", style: TextStyle(color: Colors.white)),
+      ),
       backgroundColor: MyColors.secondaryAppColor,
       // body: BlocListener<AuthenticationBloc, AuthenticationState>(
       //   bloc: authenticationBloc,
@@ -36,10 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: TextButton(
           onPressed: () => Navigator.pushNamed(context, '/home'),
-          child: const Text('move from splash', style: TextStyle(
-            color: Colors.black, 
-            fontSize: 25.0
-          )),
+          child: const Text('move from splash',
+              style: TextStyle(color: Colors.black, fontSize: 25.0)),
         ),
       ),
     );

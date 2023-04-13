@@ -5,6 +5,7 @@ import '../../../responsive.dart';
 import '../dashboard/dashboard_screen.dart';
 import '../document/documents_screen.dart';
 import '../products/products_screen.dart';
+import '../stock/stock_screen.dart';
 import 'components/side_menu.dart';
 
 import 'dart:math' as math show pi;
@@ -20,28 +21,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: MyColors.background,
         title: const Text("Management", style: TextStyle(color: Colors.white)),
       ),
-      // drawer: Responsive.isMobile(context) ? const SideMenu() : null,
-      // body: SafeArea(
-      //   child: Row(
-      //     crossAxisAlignment: CrossAxisAlignment.start,
-      //     children: [
-      //       // We want this side menu only for large screen
-      //       if (!Responsive.isMobile(context))
-      //         const Expanded(
-      //           // default flex = 1
-      //           // and it takes 1/6 part of the screen
-      //           child: SideMenu(),
-      //         ),
-      //       Expanded(
-      //         // It takes 5/6 part of the screen
-      //         flex: 5,
-      //         // child: DashboardScreen(),
-      //         // child: DocumentsScreen(),
-      //         child: ProductsScreen(),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+
       body: SidebarPage(),
     );
   }
@@ -63,7 +43,7 @@ class _SidebarPageState extends State<SidebarPage> {
     super.initState();
     _items = _generateItems;
     _headline = _items.firstWhere((item) => item.isSelected).text;
-    _mainBody = DashboardScreen();
+    _mainBody = StockScreen();
   }
 
   List<CollapsibleItem> get _generateItems {
@@ -102,7 +82,10 @@ class _SidebarPageState extends State<SidebarPage> {
       CollapsibleItem(
         text: 'Stock',
         icon: Icons.inventory,
-        onPressed: () => setState(() => _headline = 'Stock'),
+        onPressed: () => setState(() {
+          _headline = 'DashBoard';
+          _mainBody = StockScreen();
+        }),
         // onHold: () => ScaffoldMessenger.of(context)
         //     .showSnackBar(SnackBar(content: const Text("Stock"))),
       ),
@@ -162,6 +145,7 @@ class _SidebarPageState extends State<SidebarPage> {
         //       SnackBar(content: Text('Yay! Flutter Collapsible Sidebar!')));
         // },
         body: _mainBody,
+        // body: Center(child: Text("hello")),
         backgroundColor: MyColors.background,
         selectedTextColor: Colors.limeAccent,
         textStyle: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
