@@ -22,7 +22,7 @@ class ReportItems extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            width: 300,
+            // width: 300,
             height: 200,
             child: data < 0
                 ? Text("No data to display",

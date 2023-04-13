@@ -17,42 +17,61 @@ class _MonthlyBarState extends State<MonthlyBar> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          Flex(
+            direction: Axis.horizontal,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Text(
-                'Monthly Sales - 2023',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
+              Flexible(
+                child: const Text(
+                  'Monthly Sales - 2023',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
                 ),
               ),
-              Row(
-                children: <Widget>[
-                  const IconButton(
-                    onPressed: null,
-                    icon: Icon(Icons.refresh),
-                    color: Colors.white,
-                    iconSize: 25,
-                  ),
-                  const Switch(value: false, onChanged: null),
-                  Row(
-                    children: const <Widget>[
-                      IconButton(
+              Flexible(
+                child: Flex(
+                  direction: Axis.horizontal,
+                  children: <Widget>[
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: const IconButton(
                         onPressed: null,
-                        icon: Icon(Icons.arrow_left),
+                        icon: Icon(Icons.refresh),
                         color: Colors.white,
                         iconSize: 25,
                       ),
-                      IconButton(
-                        onPressed: null,
-                        icon: Icon(Icons.arrow_right),
-                        color: Colors.white,
-                        iconSize: 25,
+                    ),
+                    Flexible(
+                        fit: FlexFit.tight,
+                        child: const Switch(value: false, onChanged: null)),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Row(
+                        children: const <Widget>[
+                          Expanded(
+                            child: IconButton(
+                              onPressed: null,
+                              icon: Icon(Icons.arrow_left),
+                              color: Colors.white,
+                              iconSize: 25,
+                            ),
+                          ),
+                          Expanded(
+                            child: IconButton(
+                              onPressed: null,
+                              icon: Icon(Icons.arrow_right),
+                              color: Colors.white,
+                              iconSize: 25,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  )
-                ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
