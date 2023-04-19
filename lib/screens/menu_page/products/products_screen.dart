@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_simple_treeview/flutter_simple_treeview.dart';
 import 'package:flutter_treeview/flutter_treeview.dart';
+import 'package:modal_side_sheet/modal_side_sheet.dart';
 import 'package:resizable_widget/resizable_widget.dart';
 import 'package:separated_row/separated_row.dart';
+import 'package:side_sheet/side_sheet.dart';
 
 import '../../../config/my_colors.dart';
 import 'components/products_table.dart';
+import 'components/top_option.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({super.key});
@@ -18,7 +21,7 @@ class ProductsScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Center(child: Text("hellow")),
-          TopOptions(),
+          TopOptions(context),
           // Divider(),
           // Container(child: Center(child: Text("Hello")))
           Expanded(child: MainContentResizable()),
@@ -192,7 +195,7 @@ void _printResizeInfo(List<WidgetSizeInfo> dataList) {
   print(dataList.map((x) => '(${x.size}, ${x.percentage}%)').join(", "));
 }
 
-Widget TopOptions() {
+Widget TopOptions(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(25.0),
     child: Wrap(
@@ -200,186 +203,64 @@ Widget TopOptions() {
       spacing: 25,
       runSpacing: 25,
       children: [
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.refresh,
-              size: 30,
-            ),
-            Text(
-              "Refresh",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
+        TopOption(
+            icon: Icons.refresh,
+            name: "Refresh",
+            action: () => print('refresh')),
+        TopOption(
+            icon: Icons.create_new_folder,
+            name: "New group",
+            action: () => print('New group')),
+        TopOption(
+            icon: Icons.drive_file_rename_outline,
+            name: "Edit group",
+            action: () => print('Edit group')),
+        TopOption(
+            icon: Icons.folder_delete,
+            name: "Delete group",
+            action: () => print('Delete group')),
+        TopOption(
+          icon: Icons.add,
+          name: "New Product",
+          action: () => SideSheet.right(
+            context: context,
+            width: MediaQuery.of(context).size.width * 0.3,
+            body: Text("Body1", style: TextStyle(color: Colors.black)),
+          ),
         ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.create_new_folder,
-              size: 30,
-            ),
-            Text(
-              "New group",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.drive_file_rename_outline,
-              size: 30,
-            ),
-            Text(
-              "Edit group",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.folder_delete,
-              size: 30,
-            ),
-            Text(
-              "Delete group",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.add,
-              size: 30,
-            ),
-            Text(
-              "New product",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.edit,
-              size: 30,
-            ),
-            Text(
-              "Edit Product",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.delete,
-              size: 30,
-            ),
-            Text(
-              "Delete Product",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Icon(
-              Icons.print,
-              size: 30,
-            ),
-            Text(
-              "print",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Icon(
-              Icons.picture_as_pdf,
-              size: 30,
-            ),
-            Text(
-              "Save as PDF",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.tag,
-              size: 30,
-            ),
-            Text(
-              "Price tags",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Icon(
-              Icons.sort,
-              size: 30,
-            ),
-            Text(
-              "Sorting",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Icon(
-              Icons.trending_up,
-              size: 30,
-            ),
-            Text(
-              "Mov. avg. price",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.file_download,
-              size: 30,
-            ),
-            Text(
-              "Import",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.file_upload,
-              size: 30,
-            ),
-            Text(
-              "Export",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
-        Column(
-          children: const <Widget>[
-            Icon(
-              Icons.help,
-              size: 30,
-            ),
-            Text(
-              "Help",
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
-        ),
+        TopOption(
+            icon: Icons.edit,
+            name: "Edit Product",
+            action: () => print('Edit Product')),
+        TopOption(
+            icon: Icons.delete,
+            name: "Delete product",
+            action: () => print('Delete product')),
+        TopOption(
+            icon: Icons.print, name: "Print", action: () => print('Print')),
+        TopOption(
+            icon: Icons.picture_as_pdf,
+            name: "Save as PDF",
+            action: () => print('Save as PDF')),
+        TopOption(
+            icon: Icons.tag,
+            name: "Price tags",
+            action: () => print('Price tags')),
+        TopOption(
+            icon: Icons.sort, name: "Sorting", action: () => print('Sorting')),
+        TopOption(
+            icon: Icons.trending_up,
+            name: "Mov. avg. price",
+            action: () => print('Mov. avg. price')),
+        TopOption(
+            icon: Icons.file_download,
+            name: "Import",
+            action: () => print('Import')),
+        TopOption(
+            icon: Icons.file_upload,
+            name: "Export",
+            action: () => print('Export')),
+        TopOption(icon: Icons.help, name: "Help", action: () => print('Help')),
       ],
     ),
   );

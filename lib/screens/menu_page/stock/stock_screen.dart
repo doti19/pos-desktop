@@ -254,9 +254,7 @@ TreeViewTheme _treeViewTheme = const TreeViewTheme(
 
 void _printResizeInfo(List<WidgetSizeInfo> dataList) {
   // ignore: avoid_print
-  // if (dataList[1].percentage < 0.35) {
-  //   dataList[1] = WidgetSizeInfo(450, 0.35);
-  // }
+
   print(dataList.map((x) => '(${x.size}, ${x.percentage}%)').join(", "));
 }
 

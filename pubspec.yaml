@@ -77,6 +77,8 @@ dependencies:
   flutter_treeview: ^1.0.7+1
   separated_row: ^2.0.0
   collapsible_sidebar: ^2.0.4
+  modal_side_sheet: ^0.0.1
+  side_sheet: ^1.0.4
   # flutter_icons: ^1.1.0
   # json_theme: ^5.0.0+5
 
