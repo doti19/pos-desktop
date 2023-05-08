@@ -28,6 +28,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class SidebarPage extends StatefulWidget {
+  const SidebarPage({super.key});
+
   @override
   _SidebarPageState createState() => _SidebarPageState();
 }
@@ -36,14 +38,14 @@ class _SidebarPageState extends State<SidebarPage> {
   late List<CollapsibleItem> _items;
   late String _headline;
   late Widget _mainBody;
-  AssetImage _avatarImg = AssetImage('assets/logo/logo_icon.png');
+  final AssetImage _avatarImg = const AssetImage('assets/logo/logo_icon.png');
 
   @override
   void initState() {
     super.initState();
     _items = _generateItems;
     _headline = _items.firstWhere((item) => item.isSelected).text;
-    _mainBody = StockScreen();
+    _mainBody = const DashboardScreen();
   }
 
   List<CollapsibleItem> get _generateItems {
@@ -53,7 +55,7 @@ class _SidebarPageState extends State<SidebarPage> {
         icon: Icons.dashboard,
         onPressed: () => setState(() {
           _headline = 'DashBoard';
-          _mainBody = DashboardScreen();
+          _mainBody = const DashboardScreen();
         }),
         // onHold: () => ScaffoldMessenger.of(context)
         //     .showSnackBar(SnackBar(content: const Text("Dashboard"))),
@@ -131,7 +133,7 @@ class _SidebarPageState extends State<SidebarPage> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return SafeArea(
       child: CollapsibleSidebar(
         isCollapsed: MediaQuery.of(context).size.width <= 800,

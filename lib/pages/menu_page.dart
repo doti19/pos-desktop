@@ -6,7 +6,7 @@ import 'package:easy_sidemenu/easy_sidemenu.dart';
 // import 'package:flutter_side_menu/flutter_side_menu.dart';
 import 'package:animated_sidebar/animated_sidebar.dart';
 
-import '../screens/menu_page/dashboard.dart';
+// import '../screens/menu_page/dashboard.dart';
 
 class MenuPage extends StatefulWidget {
   MenuPage({super.key});
@@ -18,7 +18,7 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   // SideMenuController page = SideMenuController();
   final List<SidebarItem> items = [
-    SidebarItem(icon: Icons.dashboard_customize, text: 'Dashboard'),
+    SidebarItem(icon: Icons.dashboard_customize, text: 'Dashboard1'),
     SidebarItem(icon: Icons.notes, text: 'Documents'),
     SidebarItem(icon: Icons.shopping_cart, text: 'Products'),
     SidebarItem(icon: Icons.inventory_2, text: 'Stock'),
@@ -30,16 +30,16 @@ class _MenuPageState extends State<MenuPage> {
   ];
 
   final List<Widget> contents = [
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
-    Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
+    // Dashboard(),
   ];
 
   int activeTab = 0;

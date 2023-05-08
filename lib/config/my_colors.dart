@@ -22,5 +22,7 @@ class MyColors {
   static Color lightScaffoldBackgroundColor = hexToColor('#F9F9F9');
   static Color darkScaffoldBackgroundColor = hexToColor('#2F2E2E');
   static Color secondaryAppColor = hexToColor('#5E92F3');
+  static Color secondaryAppColorVariant = hexToColor('#202d75');
+
   static Color secondaryDarkAppColor = Colors.white;
 }

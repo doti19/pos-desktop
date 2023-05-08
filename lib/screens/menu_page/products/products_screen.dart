@@ -7,6 +7,8 @@ import 'package:separated_row/separated_row.dart';
 import 'package:side_sheet/side_sheet.dart';
 
 import '../../../config/my_colors.dart';
+import '../../../utils/size_utils.dart';
+import 'components/new_product.dart';
 import 'components/products_table.dart';
 import 'components/top_option.dart';
 
@@ -218,14 +220,16 @@ Widget TopOptions(BuildContext context) {
         TopOption(
             icon: Icons.folder_delete,
             name: "Delete group",
-            action: () => print('Delete group')),
+            action: () => print(MediaQuery.of(context).size.width)),
         TopOption(
           icon: Icons.add,
           name: "New Product",
           action: () => SideSheet.right(
             context: context,
-            width: MediaQuery.of(context).size.width * 0.3,
-            body: Text("Body1", style: TextStyle(color: Colors.black)),
+            width: MediaQuery.of(context).size.width < 1000
+                ? 450
+                : MediaQuery.of(context).size.width * 0.4,
+            body: NewProduct(),
           ),
         ),
         TopOption(
