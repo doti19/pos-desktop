@@ -89,6 +89,8 @@ dependencies:
   super_tag_editor: ^0.1.2
   flutter_chip_tags: ^2.0.2
   material_tag_editor: ^0.2.0-dev.1
+  file_picker: ^5.2.10
+  permission_handler: ^10.2.0
   
   # flutter_icons: ^1.1.0
   # json_theme: ^5.0.0+5

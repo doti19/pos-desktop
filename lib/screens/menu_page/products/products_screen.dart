@@ -8,7 +8,7 @@ import 'package:side_sheet/side_sheet.dart';
 
 import '../../../config/my_colors.dart';
 import '../../../utils/size_utils.dart';
-import 'components/new_product.dart';
+import 'components/new_product/new_product.dart';
 import 'components/products_table.dart';
 import 'components/top_option.dart';
 

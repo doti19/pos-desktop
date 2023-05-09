@@ -9,7 +9,7 @@ import 'package:textfield_tags/textfield_tags.dart';
 import 'package:super_tag_editor/tag_editor.dart';
 import 'package:flutter_chip_tags/flutter_chip_tags.dart';
 
-import 'InputChipExample.dart';
+import '../../InputChipExample.dart';
 
 import 'package:material_tag_editor/tag_editor.dart' as tag;
 import 'package:material_tag_editor/tag_editor_layout_delegate.dart';
