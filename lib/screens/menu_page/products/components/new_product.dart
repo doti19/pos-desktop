@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_desktop2/screens/menu_page/products/components/price_n_tax.dart';
 import 'package:tab_container/tab_container.dart';
 
 import '../../../../config/my_colors.dart';
@@ -19,13 +20,13 @@ class NewProduct extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "New Product",
                 style: TextStyle(fontSize: 32.0, color: Colors.white54),
               ),
               IconButton(
-                icon:
-                    Icon(Icons.arrow_forward, size: 32.0, color: Colors.white),
+                icon: const Icon(Icons.arrow_forward,
+                    size: 32.0, color: Colors.white),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -118,26 +119,7 @@ List<Widget> _getChildren4() => <Widget>[
       //     ],
       //   ),
       // ),
-      SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Page 2',
-              // style: Theme.of(context).textTheme.headline5?.copyWith(
-              //       color: Colors.white,
-              //     ),
-            ),
-            const SizedBox(height: 50.0),
-            const Text(
-              '''Duis in tortor nisl. Vestibulum vitae ullamcorper urna. Aliquam at consequat mi, sit amet ultricies mauris. Nam volutpat risus mollis tortor porta volutpat. Fusce sollicitudin felis in interdum finibus. Nam ultrices volutpat posuere. Quisque eget mattis nulla. Cras sit amet consequat erat. Nam consectetur urna sem, eget faucibus quam tincidunt sed. Cras congue diam vitae turpis tristique, ut commodo nunc placerat. Nunc id risus mattis, cursus erat in, dignissim mauris.
-
-Donec ac libero arcu. Pellentesque sollicitudin mi et lectus interdum, sit amet dignissim turpis laoreet. Aenean id sapien at felis fermentum faucibus. Fusce suscipit, odio eget vestibulum rutrum, magna nibh sagittis felis, auctor blandit tortor diam et augue. Etiam sit amet mi fermentum, sollicitudin dolor sit amet, viverra lectus. Curabitur non leo vulputate, gravida urna non, maximus lacus. Maecenas a suscipit lacus. Donec pharetra laoreet lacus, non sagittis ante aliquet eget. Sed fermentum eros a nunc molestie imperdiet. Ut quis massa vitae sem vehicula facilisis at eget eros. Proin facilisis eu dolor eu ultricies. Etiam rhoncus arcu nec diam malesuada, in malesuada ipsum rhoncus. Nunc convallis fermentum purus. Sed lobortis purus sit amet ante blandit pharetra. Cras ut turpis sem. Vivamus vel felis in elit fringilla laoreet.''',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
+      PriceAndTax(),
       SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

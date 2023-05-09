@@ -37,7 +37,7 @@ class _DetailsFormState extends State<DetailsForm> {
 
   bool _groupHasError = false;
 
-  var genderOptions = ['Products', 'Products/stg'];
+  List<String> genderOptions = ['Products', 'Products/stg'];
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
@@ -60,7 +60,7 @@ class _DetailsFormState extends State<DetailsForm> {
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    // _controller.dispose();
   }
 
   // final TextEditingController _textEditingController = TextEditingController();
