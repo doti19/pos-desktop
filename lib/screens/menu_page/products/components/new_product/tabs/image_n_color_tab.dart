@@ -79,7 +79,7 @@ class _ImageAndColorState extends State<ImageAndColor> {
                     //     : const Icon(Icons.check),
                     hintText: 'Select color',
                   ),
-                  initialValue: colorOptions[0].name,
+                  initialValue: colorOptions[4].name,
                   // validator: FormBuilderValidators.compose(
                   //     [FormBuilderValidators.required()]),
                   items: colorOptions

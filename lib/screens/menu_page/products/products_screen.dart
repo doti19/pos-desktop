@@ -8,6 +8,7 @@ import 'package:side_sheet/side_sheet.dart';
 
 import '../../../config/my_colors.dart';
 import '../../../utils/size_utils.dart';
+import 'components/new_group/new_group.dart';
 import 'components/new_product/new_product.dart';
 import 'components/products_table.dart';
 import 'components/top_option.dart';
@@ -210,9 +211,16 @@ Widget TopOptions(BuildContext context) {
             name: "Refresh",
             action: () => print('refresh')),
         TopOption(
-            icon: Icons.create_new_folder,
-            name: "New group",
-            action: () => print('New group')),
+          icon: Icons.create_new_folder,
+          name: "New group",
+          action: () => SideSheet.right(
+            context: context,
+            width: MediaQuery.of(context).size.width < 1000
+                ? 450
+                : MediaQuery.of(context).size.width * 0.4,
+            body: NewGroup(),
+          ),
+        ),
         TopOption(
             icon: Icons.drive_file_rename_outline,
             name: "Edit group",

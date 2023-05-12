@@ -99,7 +99,7 @@ class NewProduct extends StatelessWidget {
                 // color: Theme.of(context).colorScheme.secondary,
                 icon: Icon(Icons.close, color: Colors.grey),
                 label: Text(
-                  'Reset',
+                  'Cancel',
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
                 ),
@@ -113,7 +113,7 @@ class NewProduct extends StatelessWidget {
 }
 
 List<Widget> _getChildren4() => <Widget>[
-      DetailsForm(),
+      DetailsTab(),
       PriceAndTax(),
       StockControl(),
       ImageAndColor(),
