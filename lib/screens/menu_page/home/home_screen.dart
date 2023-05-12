@@ -5,6 +5,7 @@ import '../../../responsive.dart';
 import '../dashboard/dashboard_screen.dart';
 import '../document/documents_screen.dart';
 import '../products/products_screen.dart';
+import '../report/report_screen.dart';
 import '../stock/stock_screen.dart';
 import 'components/side_menu.dart';
 
@@ -94,7 +95,10 @@ class _SidebarPageState extends State<SidebarPage> {
       CollapsibleItem(
         text: 'Report',
         icon: Icons.assessment,
-        onPressed: () => setState(() => _headline = 'Report'),
+        onPressed: () => setState(() {
+          _headline = 'Report';
+          _mainBody = ReportScreen();
+        }),
         // onHold: () => ScaffoldMessenger.of(context)
         //     .showSnackBar(SnackBar(content: const Text("Report"))),
       ),
