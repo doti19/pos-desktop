@@ -20,7 +20,7 @@ Route routes(RouteSettings settings) {
     case '/home':
       return MaterialPageRoute(builder: (_) => Index());
     case '/menu':
-      return MaterialPageRoute(builder: (_) => HomeScreen());
+      return MaterialPageRoute(builder: (context) => HomeScreen());
     case '/history':
       return MaterialPageRoute(builder: (_) => HistoryScreen());
     case '/products':

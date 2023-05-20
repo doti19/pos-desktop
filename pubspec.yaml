@@ -90,6 +90,9 @@ dependencies:
   flutter_chip_tags: ^2.0.2
   material_tag_editor: ^0.2.0-dev.1
   file_picker: ^5.2.10
+  syncfusion_flutter_datepicker: ^21.2.3
+  awesome_dialog: ^3.0.2
+  adaptive_dialog: ^1.8.3
   # permission_handler: ^10.2.0
   
   # flutter_icons: ^1.1.0

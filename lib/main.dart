@@ -5,43 +5,66 @@ import 'package:pos_desktop2/pages/index.dart';
 import 'package:pos_desktop2/services/authentication.dart';
 
 import 'app.dart';
+import 'blocs/product/product_bloc.dart';
+import 'models/product/product.dart';
 import 'utils/app_state_notifier.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive/hive.dart';
+
+void main() async {
   // MaterialPageRoute.debugEnableFadingRoutes = true;
-  runApp(
-    ChangeNotifierProvider<AppStateNotifier>(
-      create: (_) => AppStateNotifier(),
-      child: App(),
-    ),
-  );
-  // runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProductAdapter());
+  await Hive.openBox<Product>('products');
+
+  // runApp(
+  //   ChangeNotifierProvider<AppStateNotifier>(
+  //     create: (_) => AppStateNotifier(),
+  //     child: App(),
+  //   ),
+  // );
+  runApp(const App());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider(
-          create: (context) => AuthenticationService(),
+  Widget build(BuildContext context) => MultiBlocProvider(
+        providers: [BlocProvider(create: (context) => ProductBloc())],
+        child: MaterialApp(
+          scrollBehavior: MyCustomScrollBehavior(),
+          title: 'POS',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: const App(),
+          // home: const Index(),
+          debugShowCheckedModeBanner: false,
         ),
-      ],
-      child: MaterialApp(
-        scrollBehavior: MyCustomScrollBehavior(),
-        title: 'POS',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const App(),
-        // home: const Index(),
-        debugShowCheckedModeBanner: false,
-      ),
-    );
-  }
+      );
+  // Widget build(BuildContext context) {
+  // return MultiRepositoryProvider(
+  //   providers: [
+  //     RepositoryProvider(
+  //       create: (context) => AuthenticationService(),
+  //     ),
+  //   ],
+  //   child: MaterialApp(
+  //     scrollBehavior: MyCustomScrollBehavior(),
+  //     title: 'POS',
+  //     theme: ThemeData(
+  //       primarySwatch: Colors.blue,
+  //     ),
+  //     home: const App(),
+  //     // home: const Index(),
+  //     debugShowCheckedModeBanner: false,
+  //   ),
+  // );
+  // }
 }
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {

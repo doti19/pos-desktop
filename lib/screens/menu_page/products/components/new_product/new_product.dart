@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos_desktop2/blocs/product/product_bloc.dart';
+import 'package:pos_desktop2/models/product/product.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/comments_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/image_n_color_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/price_n_tax_tab.dart';
@@ -6,8 +9,12 @@ import 'package:pos_desktop2/screens/menu_page/products/components/new_product/t
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/stock_control_tab.dart';
 import 'package:tab_container/tab_container.dart';
 
+// import '../../../../../blocs/product/product_bloc.dart';
 import '../../../../../config/my_colors.dart';
+import '../../../../../db/boxes.dart';
+// import '../../../../../models/product/product.dart';
 import 'tabs/details_tab.dart';
+import 'tabs/yoho.dart';
 
 class NewProduct extends StatelessWidget {
   const NewProduct({super.key});
@@ -70,12 +77,9 @@ class NewProduct extends StatelessWidget {
                       style: BorderStyle.solid)),
                 ),
                 onPressed: () {
-                  // if (_formKey.currentState?.saveAndValidate() ?? false) {
-                  //   debugPrint(_formKey.currentState?.value.toString());
-                  // } else {
-                  //   debugPrint(_formKey.currentState?.value.toString());
-                  //   debugPrint('validation failed');
-                  // }
+                  context
+                      .read<ProductBloc>()
+                      .add(AddDataEvent(product: Product()..name = 'yoni'));
                 },
                 icon: const Icon(Icons.check, color: Colors.grey),
                 label: const Text(
@@ -110,6 +114,14 @@ class NewProduct extends StatelessWidget {
       ],
     ));
   }
+
+  addProduct(String name, BuildContext context) {
+    // final product = Product()..name = name;
+
+    // final box = Boxes.getProducts();
+    // box.add(product);
+    //box.put('myKey', product);
+  }
 }
 
 List<Widget> _getChildren4() => <Widget>[
@@ -119,6 +131,7 @@ List<Widget> _getChildren4() => <Widget>[
       ImageAndColor(),
       Comments(),
       PrintStations(),
+      Yoho(),
     ];
 
 List<String> _getTabs4() {
@@ -128,6 +141,7 @@ List<String> _getTabs4() {
     'Stock control',
     'Image & color',
     'Comments',
-    'print stations'
+    'print stations',
+    'yoho'
   ];
 }
