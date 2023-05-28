@@ -71,7 +71,7 @@ class ThemeConfig {
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.red))),
+                      side: const BorderSide(color: Colors.red))),
               padding: MaterialStateProperty.all<EdgeInsets>(
                   const EdgeInsets.all(16)))),
       primaryColor: accentColor,
@@ -93,7 +93,7 @@ class ThemeConfig {
             color: secondaryText,
             fontSize: 18,
           ),
-        ).headline6,
+        ).titleLarge,
       ),
       iconTheme: IconThemeData(
         color: secondaryText,

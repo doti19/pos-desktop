@@ -5,13 +5,13 @@ class TotalSales extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               "Total Sales",
               style: TextStyle(fontSize: 25),
@@ -24,7 +24,7 @@ class TotalSales extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[
+          children: <Widget>[
             Text(
               "Top performing month:",
               style: TextStyle(fontSize: 20, color: Colors.white54),

@@ -2,15 +2,11 @@ import 'package:animated_sidebar/animated_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_desktop2/pages/home_page.dart';
 import 'package:pos_desktop2/side_menu/side_menu.dart';
-import 'package:star_menu/star_menu.dart';
-import 'package:desktop/desktop.dart' as desktop;
+// import 'package:desktop/desktop.dart' as desktop;
 import 'package:responsive_navigation/responsive_navigation.dart' as resp;
-import 'package:tuanis_sidebar/tuanis_sidebar.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 
 import '../config/my_colors.dart';
-import '../side_menu/side_menu2.dart';
-import '../widgets/side_menu/logo_widget.dart';
 
 class Index extends StatelessWidget {
   const Index({Key? key}) : super(key: key);
@@ -25,14 +21,14 @@ class Index extends StatelessWidget {
     resp.NavItem(
         // builder: (context, index) => Center(child: Text("Home")),
         label: "Home",
-        icon: Icon(Icons.add_reaction_rounded)),
+        icon: const Icon(Icons.add_reaction_rounded)),
     resp.NavItem(
         // builder: (context, index) => Center(child: Text("Home")),
         label: "Home",
-        icon: Icon(Icons.add_reaction_rounded)),
+        icon: const Icon(Icons.add_reaction_rounded)),
   ];
   static final List<SideMenuItem> items3 = [
-    SideMenuItem(
+    const SideMenuItem(
       // Priority of item to show on SideMenu, lower value is displayed at the top
       priority: 0,
       title: 'Dashboard',
@@ -47,13 +43,13 @@ class Index extends StatelessWidget {
       priority: 1,
       title: 'Settings',
       onTap: (index, controller) => print('hey'),
-      icon: Icon(Icons.settings),
+      icon: const Icon(Icons.settings),
     ),
     SideMenuItem(
       priority: 2,
       title: 'Exit',
       onTap: (index, controller) => print("hello"),
-      icon: Icon(Icons.exit_to_app),
+      icon: const Icon(Icons.exit_to_app),
     ),
   ];
   @override

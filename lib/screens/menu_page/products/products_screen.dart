@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_simple_treeview/flutter_simple_treeview.dart';
 import 'package:flutter_treeview/flutter_treeview.dart';
-import 'package:modal_side_sheet/modal_side_sheet.dart';
 import 'package:resizable_widget/resizable_widget.dart';
-import 'package:separated_row/separated_row.dart';
 import 'package:side_sheet/side_sheet.dart';
 
 import '../../../config/my_colors.dart';
-import '../../../utils/size_utils.dart';
 import 'components/new_group/new_group.dart';
 import 'components/new_product/new_product.dart';
 import 'components/products_table.dart';
@@ -73,7 +70,7 @@ Widget tempWidget() {
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(2),
                     label: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text("Product Name"),
                     ),
                     // labelText: "Product Name",
@@ -85,7 +82,7 @@ Widget tempWidget() {
               const Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text.rich(
                       TextSpan(
                           text: 'Products count: ',
@@ -102,15 +99,15 @@ Widget tempWidget() {
             ],
           ),
         ),
-        Expanded(child: const ProductsTable()),
+        const Expanded(child: ProductsTable()),
       ],
     ),
   );
 }
 
 Widget ContentHeader() {
-  return Row(
-    children: const <Widget>[],
+  return const Row(
+    children: <Widget>[],
   );
 }
 
@@ -218,7 +215,7 @@ Widget TopOptions(BuildContext context) {
             width: MediaQuery.of(context).size.width < 1000
                 ? 450
                 : MediaQuery.of(context).size.width * 0.4,
-            body: NewGroup(),
+            body: const NewGroup(),
           ),
         ),
         TopOption(
@@ -237,7 +234,7 @@ Widget TopOptions(BuildContext context) {
             width: MediaQuery.of(context).size.width < 1000
                 ? 450
                 : MediaQuery.of(context).size.width * 0.4,
-            body: NewProduct(),
+            body: const NewProduct(),
           ),
         ),
         TopOption(

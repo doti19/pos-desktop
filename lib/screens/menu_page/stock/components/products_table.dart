@@ -66,9 +66,9 @@ class _ProductsTableState extends State<ProductsTable> {
               columnName: 'code',
               width: columnWidths['code']!,
               label: Container(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Code',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -78,9 +78,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'name',
             width: columnWidths['name']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Name',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -94,9 +94,9 @@ class _ProductsTableState extends State<ProductsTable> {
             // width: 120,
 
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Quantity',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -108,9 +108,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'unit_of_measure',
             width: columnWidths['unit_of_measure']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Unit of measure',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -122,9 +122,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'cost_price',
             width: columnWidths['cost_price']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Cost price',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -136,9 +136,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'cost',
             width: columnWidths['cost']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Cost',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -150,9 +150,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'cost_incl._tax',
             width: columnWidths['cost_incl._tax']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Cost incl. tax',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -164,9 +164,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'value',
             width: columnWidths['value']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Value',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -178,9 +178,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'value_incl._tax',
             width: columnWidths['value_incl._tax']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Value incl. tax',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -271,7 +271,7 @@ class EmployeeDataSource extends DataGridSource {
         //     ? Alignment.centerRight
         //     : Alignment.centerLeft,
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Text(
           dataGridCell.value.toString(),
           style: const TextStyle(

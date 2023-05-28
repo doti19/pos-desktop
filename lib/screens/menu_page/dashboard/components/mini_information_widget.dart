@@ -21,10 +21,10 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: const BoxDecoration(
         color: secondaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.all(defaultPadding * 0.75),
+                padding: const EdgeInsets.all(defaultPadding * 0.75),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
@@ -48,24 +48,24 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 12.0),
+                padding: const EdgeInsets.only(right: 12.0),
                 child: DropdownButton(
-                  icon: Icon(Icons.more_vert, size: 18),
-                  underline: SizedBox(),
-                  style: Theme.of(context).textTheme.button,
+                  icon: const Icon(Icons.more_vert, size: 18),
+                  underline: const SizedBox(),
+                  style: Theme.of(context).textTheme.labelLarge,
                   value: _value,
-                  items: [
+                  items: const [
                     DropdownMenuItem(
-                      child: Text("Daily"),
                       value: 1,
+                      child: Text("Daily"),
                     ),
                     DropdownMenuItem(
-                      child: Text("Weekly"),
                       value: 2,
+                      child: Text("Weekly"),
                     ),
                     DropdownMenuItem(
-                      child: Text("Monthly"),
                       value: 3,
+                      child: Text("Monthly"),
                     ),
                   ],
                   onChanged: (int? value) {
@@ -85,7 +85,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Container(
@@ -96,7 +96,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           ProgressLine(
@@ -110,14 +110,14 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
                 "${widget.dailyData.volumeData}",
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(color: Colors.white70),
               ),
               Text(
                 widget.dailyData.totalStorage!,
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(color: Colors.white),
               ),
             ],
@@ -141,7 +141,7 @@ class LineChartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           width: 80,
           height: 30,
           child: LineChart(
@@ -188,7 +188,7 @@ class ProgressLine extends StatelessWidget {
           height: 5,
           decoration: BoxDecoration(
             color: color.withOpacity(0.1),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
           ),
         ),
         LayoutBuilder(
@@ -197,7 +197,7 @@ class ProgressLine extends StatelessWidget {
             height: 5,
             decoration: BoxDecoration(
               color: color,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
           ),
         ),

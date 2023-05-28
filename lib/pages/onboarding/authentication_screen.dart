@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthenticationScreen extends StatefulWidget {
+  const AuthenticationScreen({super.key});
+
   @override
   _AuthenticationScreenState createState() => _AuthenticationScreenState();
 }
@@ -24,7 +26,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
       //     fontSize: 16.0);
     }
 
-    return Scaffold(
+    return const Scaffold(
     //     body: WillPopScope(
     //   onWillPop: () async => false,
     //   child: BlocListener<AuthenticationBloc, AuthenticationState>(

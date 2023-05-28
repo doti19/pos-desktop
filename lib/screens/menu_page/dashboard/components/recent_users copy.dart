@@ -13,17 +13,17 @@ class RecentUsers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: const BoxDecoration(
         color: secondaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Recent Users",
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           SingleChildScrollView(
             //scrollDirection: Axis.horizontal,
@@ -32,7 +32,7 @@ class RecentUsers extends StatelessWidget {
               child: DataTable(
                 horizontalMargin: 0,
                 columnSpacing: defaultPadding,
-                columns: [
+                columns: const [
                   DataColumn(
                     label: Text("Name Surname"),
                   ),
@@ -93,11 +93,11 @@ DataRow recentUserDataRow(RecentUser userInfo, BuildContext context) {
         ),
       ),
       DataCell(Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: getRoleColor(userInfo.role).withOpacity(.2),
             border: Border.all(color: getRoleColor(userInfo.role)),
-            borderRadius: BorderRadius.all(Radius.circular(5.0) //
+            borderRadius: const BorderRadius.all(Radius.circular(5.0) //
                 ),
           ),
           child: Text(userInfo.role!))),
@@ -109,45 +109,45 @@ DataRow recentUserDataRow(RecentUser userInfo, BuildContext context) {
           children: [
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue.withOpacity(0.5),
+                backgroundColor: Colors.blue.withOpacity(0.5),
               ),
-              icon: Icon(
+              icon: const Icon(
                 Icons.edit,
                 size: 14,
               ),
               onPressed: () {},
               // Edit
-              label: Text("Edit"),
+              label: const Text("Edit"),
             ),
-            SizedBox(
+            const SizedBox(
               width: 6,
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green.withOpacity(0.5),
+                backgroundColor: Colors.green.withOpacity(0.5),
               ),
-              icon: Icon(
+              icon: const Icon(
                 Icons.visibility,
                 size: 14,
               ),
               onPressed: () {},
               //View
-              label: Text("View"),
+              label: const Text("View"),
             ),
-            SizedBox(
+            const SizedBox(
               width: 6,
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                primary: Colors.red.withOpacity(0.5),
+                backgroundColor: Colors.red.withOpacity(0.5),
               ),
-              icon: Icon(Icons.delete),
+              icon: const Icon(Icons.delete),
               onPressed: () {
                 showDialog(
                     context: context,
                     builder: (_) {
                       return AlertDialog(
-                          title: Center(
+                          title: const Center(
                             child: Text("Confirm Deletion"),
                           ),
                           content: Container(
@@ -157,35 +157,35 @@ DataRow recentUserDataRow(RecentUser userInfo, BuildContext context) {
                               children: [
                                 Text(
                                     "Are you sure want to delete '${userInfo.name}'?"),
-                                SizedBox(
+                                const SizedBox(
                                   height: 16,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     ElevatedButton.icon(
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.close,
                                           size: 14,
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                            primary: Colors.grey),
+                                            backgroundColor: Colors.grey),
                                         onPressed: () {
                                           Navigator.of(context).pop();
                                         },
-                                        label: Text("Cancel")),
-                                    SizedBox(
+                                        label: const Text("Cancel")),
+                                    const SizedBox(
                                       width: 20,
                                     ),
                                     ElevatedButton.icon(
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.delete,
                                           size: 14,
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                            primary: Colors.red),
+                                            backgroundColor: Colors.red),
                                         onPressed: () {},
-                                        label: Text("Delete"))
+                                        label: const Text("Delete"))
                                   ],
                                 )
                               ],
@@ -194,7 +194,7 @@ DataRow recentUserDataRow(RecentUser userInfo, BuildContext context) {
                     });
               },
               // Delete
-              label: Text("Delete"),
+              label: const Text("Delete"),
             ),
           ],
         ),

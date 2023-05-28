@@ -9,7 +9,7 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final AuthenticationService _auth;
 
-  HomeBloc(this._auth) : super(HomeInitial()) {
+  HomeBloc(this._auth) : super(const HomeInitial()) {
     on<HomeEvent>((event, emit) {
       // TODO: implement event handler
     });

@@ -40,8 +40,8 @@ class _List extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("🔥 Upcoming events"),
-        SizedBox(
+        const Text("🔥 Upcoming events"),
+        const SizedBox(
           height: 8,
         ),
         Wrapper(

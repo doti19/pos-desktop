@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../db/boxes.dart';
@@ -9,7 +10,7 @@ part 'product_event.dart';
 part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
-  ProductBloc() : super(ProductInitial()) {
+  ProductBloc() : super(const ProductInitial()) {
     Box<Product> boxProduct;
     List<Product> products = [];
     Product? product;
@@ -36,11 +37,21 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       try {
         product = event.product;
         product!.name = event.name;
+        product!.image = event.image;
 
         product!.save();
         add(const FetchAllProductEvent());
       } catch (e) {
         print('failed UpdateSpecificProductEvent: $e');
+      }
+    });
+
+    on<DeleteAllProductsEvent>((event, Emit) {
+      try {
+        final box = Boxes.getProducts();
+        box.clear();
+      } catch (e) {
+        print('failed deleteAllProducts');
       }
     });
 

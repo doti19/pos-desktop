@@ -1,10 +1,7 @@
-import 'dart:math';
 
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_desktop2/config/my_colors.dart';
 
-import '../../../../core/constants/color_constants.dart';
 import 'monthly_Bar.dart';
 import 'totalSales.dart';
 

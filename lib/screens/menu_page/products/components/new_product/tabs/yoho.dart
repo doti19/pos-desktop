@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../../../blocs/product/product_bloc.dart';
-import '../../../../../../db/boxes.dart';
 import '../../../../../../models/product/product.dart';
 
 class Yoho extends StatelessWidget {
+  // final formKey;
   const Yoho({super.key});
 
   @override
@@ -18,6 +16,7 @@ class Yoho extends StatelessWidget {
       child: BlocBuilder<ProductBloc, ProductState>(builder: (context, state) {
         if (state is ProductInitial) {
           context.read<ProductBloc>().add(const FetchAllProductEvent());
+          // BlocProvider.of<ProductBloc>(context).add(const FetchAllProductEvent());
         }
         if (state is DisplayAllProductsState) {
           if (state.products.isNotEmpty) {
@@ -35,14 +34,21 @@ class Yoho extends StatelessWidget {
                                       product: state.products[i]));
                             },
                             child: Container(
-                                height: 20,
+                                height: 40,
                                 margin: const EdgeInsets.only(bottom: 14),
                                 child: Card(
                                     elevation: 10,
                                     color: i % 2 == 0
                                         ? Colors.blueAccent
                                         : Colors.brown,
-                                    child: Text(state.products[i].name))));
+                                    child: Row(
+                                      children: [
+                                        Image.memory(
+                                          state.products[i].image,
+                                        ),
+                                        Text(state.products[i].name)
+                                      ],
+                                    ))));
                       }),
                 ),
               ],
@@ -50,7 +56,8 @@ class Yoho extends StatelessWidget {
           }
         }
         return Center(
-            child: Text('empty'.toUpperCase(), style: TextStyle(fontSize: 21)));
+            child: Text('empty'.toUpperCase(),
+                style: const TextStyle(fontSize: 21)));
       }),
 
       // child: ValueListenableBuilder<Box<Product>>(
@@ -65,7 +72,7 @@ class Yoho extends StatelessWidget {
 
   Widget buildContent(List<Product> products) {
     if (products.isEmpty) {
-      return Center(
+      return const Center(
         child: Text(
           'No products yet!',
           style: TextStyle(fontSize: 24),
@@ -76,7 +83,7 @@ class Yoho extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: products.length,
               itemBuilder: (BuildContext context, int index) {
                 final transaction = products[index];
@@ -97,11 +104,11 @@ class Yoho extends StatelessWidget {
     return Card(
       color: Colors.white,
       child: ExpansionTile(
-        tilePadding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        tilePadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         title: Text(
           product.name,
           maxLines: 2,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         children: [
           buildButtons(context, product),
@@ -114,15 +121,15 @@ class Yoho extends StatelessWidget {
         children: [
           Expanded(
             child: TextButton.icon(
-              label: Text('Edit'),
-              icon: Icon(Icons.edit),
+              label: const Text('Edit'),
+              icon: const Icon(Icons.edit),
               onPressed: null,
             ),
           ),
           Expanded(
             child: TextButton.icon(
-              label: Text('Delete'),
-              icon: Icon(Icons.delete),
+              label: const Text('Delete'),
+              icon: const Icon(Icons.delete),
               onPressed: null,
             ),
           )

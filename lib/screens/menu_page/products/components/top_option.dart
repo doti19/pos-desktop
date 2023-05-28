@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:side_sheet/side_sheet.dart';
 
-import '../../../../config/my_colors.dart';
 
 class TopOption extends StatefulWidget {
   final IconData icon;

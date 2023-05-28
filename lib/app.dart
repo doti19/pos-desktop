@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 import 'blocs/product/product_bloc.dart';
 import 'config/theme_data.dart';
-import 'utils/app_state_notifier.dart';
 import 'routes/index.dart';
 
 class App extends StatelessWidget {

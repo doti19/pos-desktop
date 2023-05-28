@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/my_colors.dart';
-import '../../../../core/constants/color_constants.dart';
-import '../../../../responsive.dart';
 import 'top_products.dart';
 
 class PeriodicReports extends StatelessWidget {
@@ -11,12 +8,12 @@ class PeriodicReports extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Column(
+    return const Column(
       children: [
         Flex(
           direction: Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const <Widget>[
+          children: <Widget>[
             Flexible(
               flex: 5,
               child: Text(
@@ -35,7 +32,7 @@ class PeriodicReports extends StatelessWidget {
         Flex(
           direction: Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const <Widget>[
+          children: <Widget>[
             Flexible(child: ReportItems(title: "Top Products", data: -1)),
             Flexible(child: ReportItems(title: "Hourly Sales", data: -1)),
             Flexible(

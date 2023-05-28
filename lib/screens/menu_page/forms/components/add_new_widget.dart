@@ -6,24 +6,26 @@ import '../../../../models/daily_info_model.dart';
 import '../../../../responsive.dart';
 
 class SelectionSection extends StatelessWidget {
+  const SelectionSection({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [],
         ),
-        SizedBox(height: defaultPadding),
+        const SizedBox(height: defaultPadding),
         Responsive(
           mobile: InformationCard(
-            crossAxisCount: _size.width < 650 ? 2 : 4,
-            childAspectRatio: _size.width < 650 ? 1.2 : 1,
+            crossAxisCount: size.width < 650 ? 2 : 4,
+            childAspectRatio: size.width < 650 ? 1.2 : 1,
           ),
-          tablet: InformationCard(),
+          tablet: const InformationCard(),
           desktop: InformationCard(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.3,
+            childAspectRatio: size.width < 1400 ? 1.1 : 1.3,
           ),
         ),
       ],
@@ -44,7 +46,7 @@ class InformationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: dailyDatas.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -73,7 +75,7 @@ class MiniInformationWidget extends StatefulWidget {
 class _MiniInformationWidgetState extends State<MiniInformationWidget> {
   bool _visible = false;
 
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   void _toggle() {
     setState(() {
@@ -107,10 +109,10 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: const BoxDecoration(
         color: secondaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +122,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(defaultPadding * 0.75),
+                padding: const EdgeInsets.all(defaultPadding * 0.75),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
@@ -135,7 +137,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           GestureDetector(
               child: Container(
                 alignment: Alignment.center,
@@ -148,12 +150,12 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Visibility(
                       visible: !_visible,
-                      child: Icon(Icons.create, size: 18),
+                      child: const Icon(Icons.create, size: 18),
                     )
                   ],
                 ),
@@ -161,28 +163,28 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
               onTap: () {
                 _toggle();
               }),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Visibility(
             visible: _visible,
-            child: new Container(
-              child: new Container(
-                padding: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 10.0),
-                child: new Material(
+            child: Container(
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 10.0),
+                child: Material(
                   elevation: 10.0,
                   borderRadius: BorderRadius.circular(8.0),
-                  child: new ListTile(
-                    title: new TextField(
+                  child: ListTile(
+                    title: TextField(
                       controller: _controller,
-                      decoration: new InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Enter Name',
                         border: InputBorder.none,
                       ),
                       onChanged: _onChanged,
                     ),
-                    trailing: new IconButton(
-                      icon: new Icon(Icons.cancel),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.cancel),
                       onPressed: () {
                         _controller.clear();
                         _toggle();
@@ -200,8 +202,8 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
             maintainState: true,
             visible: status,
             child: Container(
-              padding: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0),
-              margin: EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0),
+              margin: const EdgeInsets.only(top: 15),
               child: Center(
                 child: AppButton(
                   type: ButtonType.PRIMARY,
@@ -224,7 +226,7 @@ class _MiniInformationWidgetState extends State<MiniInformationWidget> {
   _showDialog(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Container(
-            child: Row(
+            child: const Row(
       children: [
         Icon(
           Icons.verified,

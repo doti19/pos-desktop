@@ -19,13 +19,13 @@ class SliderModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['kBackgroundColor'] = this.kBackgroundColor;
-    data['text'] = this.text;
-    data['altText'] = this.altText;
-    data['bAltText'] = this.bAltText;
-    data['productImage'] = this.productImage;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['kBackgroundColor'] = kBackgroundColor;
+    data['text'] = text;
+    data['altText'] = altText;
+    data['bAltText'] = bAltText;
+    data['productImage'] = productImage;
     return data;
   }
 }

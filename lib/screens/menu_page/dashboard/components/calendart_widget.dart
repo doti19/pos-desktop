@@ -8,6 +8,8 @@ import '../../../../core/models/data.dart';
 import 'calendar_list_widget.dart';
 
 class CalendarWidget extends StatefulWidget {
+  const CalendarWidget({super.key});
+
   @override
   _CalendarWidgetState createState() => _CalendarWidgetState();
 }
@@ -41,15 +43,15 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     return Container(
       decoration: BoxDecoration(
           color: secondaryColor, borderRadius: BorderRadius.circular(10)),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${DateFormat("MMM, yyyy").format(_focusedDay)}",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                DateFormat("MMM, yyyy").format(_focusedDay),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Row(
                 children: [
@@ -60,7 +62,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                             DateTime(_focusedDay.year, _focusedDay.month - 1);
                       });
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.chevron_left,
                       color: greenColor,
                     ),
@@ -73,7 +75,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                             DateTime(_focusedDay.year, _focusedDay.month + 1);
                       });
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.chevron_right,
                       color: greenColor,
                     ),
@@ -82,7 +84,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           TableCalendar<CalendarData>(
@@ -97,14 +99,14 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 dowTextFormatter: (date, locale) {
                   return DateFormat("EEE").format(date).toUpperCase();
                 },
-                weekendStyle: TextStyle(fontWeight: FontWeight.bold),
-                weekdayStyle: TextStyle(fontWeight: FontWeight.bold),
+                weekendStyle: const TextStyle(fontWeight: FontWeight.bold),
+                weekdayStyle: const TextStyle(fontWeight: FontWeight.bold),
               ),
               onPageChanged: (day) {
                 _focusedDay = day;
                 setState(() {});
               },
-              calendarStyle: CalendarStyle(
+              calendarStyle: const CalendarStyle(
                 todayDecoration: BoxDecoration(
                   color: greenColor,
                   shape: BoxShape.circle,
@@ -115,7 +117,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 ),
               ),
               eventLoader: _eventLoader),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           CalendartList(datas: _selectedDate),

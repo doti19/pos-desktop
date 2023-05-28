@@ -12,24 +12,24 @@ class RecentDiscussions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: const BoxDecoration(
         color: secondaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Recent Open Positions",
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
             width: double.infinity,
             child: DataTable(
               horizontalMargin: 0,
               columnSpacing: defaultPadding,
-              columns: [
+              columns: const [
                 DataColumn(
                   label: Text("Position Name"),
                 ),
@@ -56,11 +56,11 @@ DataRow recentUserDataRow(RecentUser userInfo) {
   return DataRow(
     cells: [
       DataCell(Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: getRoleColor(userInfo.role).withOpacity(.2),
             border: Border.all(color: getRoleColor(userInfo.role)),
-            borderRadius: BorderRadius.all(Radius.circular(5.0) //
+            borderRadius: const BorderRadius.all(Radius.circular(5.0) //
                 ),
           ),
           child: Text(userInfo.role!))),

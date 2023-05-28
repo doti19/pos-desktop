@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../config/my_colors.dart';
 import '../widgets/home_page/item_order_widget.dart';
-import '../widgets/home_page/item_tab_widget.dart';
-import '../widgets/home_page/item_widget.dart';
 import '../widgets/home_page/order_list_widget.dart';
 import '../widgets/home_page/search_widget.dart';
 import '../widgets/home_page/top_menu_widget.dart';
@@ -34,6 +32,7 @@ class HomePage extends StatelessWidget {
               ),
               const Expanded(
                 child: OrderWidget(),
+                // child: Yoho(),
               ),
             ],
           ),
@@ -89,9 +88,9 @@ class HomePage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
                             'Sub Total',
                             style: TextStyle(
@@ -107,9 +106,9 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
                             'Tax',
                             style: TextStyle(
@@ -130,9 +129,9 @@ class HomePage extends StatelessWidget {
                         width: double.infinity,
                         color: Colors.white,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
                             'Total',
                             style: TextStyle(
@@ -158,9 +157,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {},
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Icon(Icons.print, size: 16),
                             SizedBox(width: 6),
                             Text('Print Bills')

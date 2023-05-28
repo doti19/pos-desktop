@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/color_constants.dart';
-import '../../../responsive.dart';
 import 'components/header.dart';
-import 'components/mini_information_card.dart';
 import 'components/monthly_sales.dart';
 import 'components/periodic_reports.dart';
-import 'components/recent_forums.dart';
-import 'components/recent_users.dart';
-import 'components/user_details_widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -20,14 +15,14 @@ class DashboardScreen extends StatelessWidget {
         //padding: EdgeInsets.all(defaultPadding),
         child: Container(
           padding: const EdgeInsets.all(defaultPadding),
-          child: Column(
+          child: const Column(
             children: [
-              const Header(),
-              const SizedBox(height: defaultPadding),
-              const MonthlySales(),
-              const PeriodicReports(),
+              Header(),
+              SizedBox(height: defaultPadding),
+              MonthlySales(),
+              PeriodicReports(),
               // const MiniInformation(),
-              const SizedBox(height: defaultPadding),
+              SizedBox(height: defaultPadding),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

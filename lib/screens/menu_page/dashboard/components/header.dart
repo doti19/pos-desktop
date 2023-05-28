@@ -26,14 +26,14 @@ class Header extends StatelessWidget {
             children: [
               Text(
                 "Hello, Meharii 👋",
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Text(
                 "Welcome",
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ],
           ),
@@ -43,12 +43,12 @@ class Header extends StatelessWidget {
           Expanded(
             child: Text(
               "Hello, Meharii 👋",
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
         // Expanded(child: SearchField()),
 
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         ElevatedButton.icon(
@@ -66,8 +66,8 @@ class Header extends StatelessWidget {
             //     },
             //     fullscreenDialog: true));
           },
-          icon: Icon(Icons.print),
-          label: Text(
+          icon: const Icon(Icons.print),
+          label: const Text(
             "print",
           ),
         ),
@@ -85,8 +85,8 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: defaultPadding),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.only(left: defaultPadding),
+      padding: const EdgeInsets.symmetric(
         horizontal: defaultPadding,
         vertical: defaultPadding / 2,
       ),
@@ -97,16 +97,16 @@ class ProfileCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             backgroundImage: AssetImage("assets/images/profile_pic.png"),
           ),
           if (!Responsive.isMobile(context))
-            Padding(
+            const Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+                  EdgeInsets.symmetric(horizontal: defaultPadding / 2),
               child: Text("Mehari Agmas"),
             ),
-          Icon(Icons.keyboard_arrow_down),
+          const Icon(Icons.keyboard_arrow_down),
         ],
       ),
     );
@@ -125,18 +125,18 @@ class SearchField extends StatelessWidget {
         hintText: "Search",
         fillColor: secondaryColor,
         filled: true,
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.all(defaultPadding * 0.75),
-            margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(defaultPadding * 0.75),
+            margin: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            decoration: const BoxDecoration(
               color: greenColor,
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: SvgPicture.asset(
               "assets/icons/Search.svg",

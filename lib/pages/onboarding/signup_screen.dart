@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:shared/main.dart';
 
 class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
+
   // final AuthenticationBloc authenticationBloc;
   // final AuthenticationState state;
   // SignUpForm({this.authenticationBloc, this.state});
@@ -22,7 +24,7 @@ class _SignUpFormState extends State<SignUpForm> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Email address',
               filled: true,
               isDense: true,
@@ -37,11 +39,11 @@ class _SignUpFormState extends State<SignUpForm> {
               return null;
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Password',
               filled: true,
               isDense: true,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 
 class SideMenu3 extends StatelessWidget {
+  const SideMenu3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(

@@ -35,11 +35,20 @@ class DeleteSpecificProductEvent extends ProductEvent {
   List<Object> get props => [product];
 }
 
+class DeleteAllProductsEvent extends ProductEvent {
+  const DeleteAllProductsEvent();
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
+
 class UpdateSpecificProductEvent extends ProductEvent {
   final Product product;
   final String name;
-  const UpdateSpecificProductEvent({required this.product, required this.name});
+  final Uint8List image;
+  const UpdateSpecificProductEvent(
+      {required this.product, required this.name, required this.image});
 
   @override
-  List<Object> get props => [name, product];
+  List<Object> get props => [name, product, image];
 }

@@ -76,9 +76,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
             columnName: 'id',
             width: columnWidths['id']!,
             label: Container(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   'ID',
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
@@ -87,9 +87,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'name',
           width: columnWidths['name']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Number',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -102,9 +102,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           // width: 120,
 
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'External document',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -115,9 +115,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'salary',
           width: columnWidths['salary']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Document type',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -128,9 +128,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'a',
           width: columnWidths['a']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'paid',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -141,9 +141,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'b',
           width: columnWidths['b']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Customer',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -154,9 +154,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'c',
           width: columnWidths['c']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Date',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -167,9 +167,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'd',
           width: columnWidths['d']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'POS',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -180,9 +180,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'e',
           width: columnWidths['e']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Order number',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -193,9 +193,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'f',
           width: columnWidths['f']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Payment type',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -206,9 +206,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'g',
           width: columnWidths['g']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'User',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -219,9 +219,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'h',
           width: columnWidths['h']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Discount',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -232,9 +232,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'i',
           width: columnWidths['i']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Total',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -245,9 +245,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'j',
           width: columnWidths['j']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Internal note',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -258,9 +258,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'k',
           width: columnWidths['k']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Note',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -271,9 +271,9 @@ class _DocumentsTableState extends State<DocumentsTable> {
           columnName: 'l',
           width: columnWidths['l']!,
           label: Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Created',
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -379,7 +379,7 @@ class EmployeeDataSource extends DataGridSource {
         //     ? Alignment.centerRight
         //     : Alignment.centerLeft,
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Text(
           dataGridCell.value.toString(),
           style: const TextStyle(

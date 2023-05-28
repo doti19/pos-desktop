@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../../config/my_colors.dart';
-import '../../../responsive.dart';
 import '../dashboard/dashboard_screen.dart';
 import '../document/documents_screen.dart';
 import '../products/products_screen.dart';
 import '../report/report_screen.dart';
 import '../stock/stock_screen.dart';
-import 'components/side_menu.dart';
 
-import 'dart:math' as math show pi;
 
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Management", style: TextStyle(color: Colors.white)),
       ),
 
-      body: SidebarPage(),
+      body: const SidebarPage(),
     );
   }
 }
@@ -77,7 +76,7 @@ class _SidebarPageState extends State<SidebarPage> {
         icon: Icons.category,
         onPressed: () => setState(() {
           _headline = 'DashBoard';
-          _mainBody = ProductsScreen();
+          _mainBody = const ProductsScreen();
         }),
         // onHold: () => ScaffoldMessenger.of(context)
         //     .showSnackBar(SnackBar(content: const Text("Products"))),
@@ -87,7 +86,7 @@ class _SidebarPageState extends State<SidebarPage> {
         icon: Icons.inventory,
         onPressed: () => setState(() {
           _headline = 'DashBoard';
-          _mainBody = StockScreen();
+          _mainBody = const StockScreen();
         }),
         // onHold: () => ScaffoldMessenger.of(context)
         //     .showSnackBar(SnackBar(content: const Text("Stock"))),
@@ -154,14 +153,14 @@ class _SidebarPageState extends State<SidebarPage> {
         // body: Center(child: Text("hello")),
         backgroundColor: MyColors.background,
         selectedTextColor: Colors.limeAccent,
-        textStyle: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
-        titleStyle: TextStyle(
+        textStyle: const TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
+        titleStyle: const TextStyle(
             fontSize: 20,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold),
-        toggleTitleStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        toggleTitleStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         sidebarBoxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Colors.indigo,
             blurRadius: 20,
             spreadRadius: 0.01,
@@ -171,7 +170,7 @@ class _SidebarPageState extends State<SidebarPage> {
             color: MyColors.primaryVariant,
             blurRadius: 10,
             spreadRadius: 0.01,
-            offset: Offset(3, 3),
+            offset: const Offset(3, 3),
           ),
         ],
         selectedIconColor: MyColors.primary,

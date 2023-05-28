@@ -1,10 +1,6 @@
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_desktop2/config/my_colors.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:searchable_paginated_dropdown/searchable_paginated_dropdown.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:search_choices/search_choices.dart';
 
 import 'documents_table.dart';
 
@@ -23,20 +19,20 @@ class ViewDocumentsTab extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TopOptions(),
             ),
-            Divider(),
+            const Divider(),
             BelowOptions(),
-            SizedBox(height: 8.0),
-            Row(
+            const SizedBox(height: 8.0),
+            const Row(
               children: [
                 Text("Documents (0)", style: TextStyle(fontSize: 30)),
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: EdgeInsets.only(top: 8.0),
                   child: Divider(thickness: 1.0, color: Colors.black),
                 )),
               ],
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             // Container(
             //   width: double.infinity,
             //   // color: Color.fromRGBO(255, 193, 7, 1),
@@ -45,7 +41,7 @@ class ViewDocumentsTab extends StatelessWidget {
             // ),
             Container(
               color: MyColors.mainContainer,
-              child: DocumentsTable(),
+              child: const DocumentsTable(),
             ),
           ],
         ),
@@ -75,8 +71,8 @@ Widget BelowOptions() {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Products",
                             textAlign: TextAlign.center,
@@ -114,7 +110,7 @@ Widget BelowOptions() {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "User",
                             textAlign: TextAlign.center,
@@ -144,7 +140,7 @@ Widget BelowOptions() {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Cash register",
                             textAlign: TextAlign.center,
@@ -175,7 +171,7 @@ Widget BelowOptions() {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Customer",
                             textAlign: TextAlign.center,
@@ -205,7 +201,7 @@ Widget BelowOptions() {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Document Type",
                             textAlign: TextAlign.center,
@@ -243,7 +239,7 @@ Widget BelowOptions() {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Paid status",
                             textAlign: TextAlign.center,
@@ -269,13 +265,13 @@ Widget BelowOptions() {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
@@ -286,7 +282,7 @@ Widget BelowOptions() {
                         Expanded(
                           child: Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                                EdgeInsets.symmetric(horizontal: 8.0),
                             child: TextField(
                               style: TextStyle(
                                 fontSize: 15,
@@ -300,13 +296,13 @@ Widget BelowOptions() {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
@@ -317,7 +313,7 @@ Widget BelowOptions() {
                         Expanded(
                           child: Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                                EdgeInsets.symmetric(horizontal: 8.0),
                             child: TextField(
                               style: TextStyle(
                                 fontSize: 15,
@@ -331,13 +327,13 @@ Widget BelowOptions() {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
@@ -348,7 +344,7 @@ Widget BelowOptions() {
                         Expanded(
                           child: Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                                EdgeInsets.symmetric(horizontal: 8.0),
                             child: TextField(
                               style: TextStyle(
                                 fontSize: 15,
@@ -365,13 +361,13 @@ Widget BelowOptions() {
                   ],
                 ),
               )),
-          Expanded(
+          const Expanded(
             flex: 1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Icon(
                       Icons.search,
                       size: 25,
@@ -383,7 +379,7 @@ Widget BelowOptions() {
                   ],
                 ),
                 Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Icon(
                       Icons.clear,
                       size: 25,
@@ -402,12 +398,12 @@ Widget BelowOptions() {
 }
 
 Widget TopOptions() {
-  return Wrap(
+  return const Wrap(
     alignment: WrapAlignment.start,
     spacing: 25,
     children: [
       Column(
-        children: const <Widget>[
+        children: <Widget>[
           Icon(
             Icons.add,
             size: 30,
@@ -419,7 +415,7 @@ Widget TopOptions() {
         ],
       ),
       Column(
-        children: const <Widget>[
+        children: <Widget>[
           Icon(
             Icons.preview,
             size: 30,

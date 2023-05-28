@@ -37,22 +37,22 @@ class CalendarItem extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'saminas',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
                     ),
                   ),
                   const SizedBox(height: 5),
                   Container(
-                    padding: EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       color: getRoleColor(calendarItemData.position)
                           .withOpacity(.2),
                       border: Border.all(
                         color: getRoleColor(calendarItemData.position),
                       ),
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(4.0),
                       ),
                     ),
@@ -60,7 +60,7 @@ class CalendarItem extends StatelessWidget {
                       calendarItemData.position,
                       style: Theme.of(context)
                           .textTheme
-                          .subtitle2!
+                          .titleSmall!
                           .copyWith(fontSize: 12),
                     ),
                   )

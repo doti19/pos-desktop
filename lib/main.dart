@@ -1,17 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos_desktop2/pages/index.dart';
-import 'package:pos_desktop2/services/authentication.dart';
 
 import 'app.dart';
 import 'blocs/product/product_bloc.dart';
 import 'models/product/product.dart';
-import 'utils/app_state_notifier.dart';
-import 'package:provider/provider.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive/hive.dart';
 
 void main() async {
   // MaterialPageRoute.debugEnableFadingRoutes = true;

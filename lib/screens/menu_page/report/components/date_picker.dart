@@ -168,13 +168,13 @@ class _MyDatePickerState extends State<MyDatePicker> {
           // minimumSize: const Size.fromHeight(15),
           // maximumSize: const Size(20, 20)
         ),
+        onPressed: onPressed,
         child: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.normal,
           ),
         ),
-        onPressed: onPressed,
       ),
     );
   }

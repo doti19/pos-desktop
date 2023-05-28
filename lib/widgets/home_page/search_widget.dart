@@ -9,7 +9,7 @@ class Search extends StatelessWidget {
     "Barcode",
     "Product Code",
   ];
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +26,14 @@ class Search extends StatelessWidget {
                 borderRadius: BorderRadius.circular(18),
                 color: MyColors.background,
               ),
-              child: Row(
+              child: const Row(
                 children: <Widget>[
-                  const Icon(
+                  Icon(
                     Icons.search,
                     color: Colors.white54,
                   ),
-                  const SizedBox(width: 10),
-                  const Text(
+                  SizedBox(width: 10),
+                  Text(
                     'Search menu here...',
                     style: TextStyle(color: Colors.white54, fontSize: 11),
                   ),

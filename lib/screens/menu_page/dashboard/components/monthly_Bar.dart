@@ -11,7 +11,7 @@ class MonthlyBar extends StatefulWidget {
 class _MonthlyBarState extends State<MonthlyBar> {
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
+    return const AspectRatio(
       aspectRatio: 3.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -23,7 +23,7 @@ class _MonthlyBarState extends State<MonthlyBar> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Flexible(
-                child: const Text(
+                child: Text(
                   'Monthly Sales - 2023',
                   style: TextStyle(
                     color: Colors.white,
@@ -37,7 +37,7 @@ class _MonthlyBarState extends State<MonthlyBar> {
                   children: <Widget>[
                     Flexible(
                       fit: FlexFit.tight,
-                      child: const IconButton(
+                      child: IconButton(
                         onPressed: null,
                         icon: Icon(Icons.refresh),
                         color: Colors.white,
@@ -46,11 +46,11 @@ class _MonthlyBarState extends State<MonthlyBar> {
                     ),
                     Flexible(
                         fit: FlexFit.tight,
-                        child: const Switch(value: false, onChanged: null)),
+                        child: Switch(value: false, onChanged: null)),
                     Flexible(
                       fit: FlexFit.tight,
                       child: Row(
-                        children: const <Widget>[
+                        children: <Widget>[
                           Expanded(
                             child: IconButton(
                               onPressed: null,
@@ -75,11 +75,11 @@ class _MonthlyBarState extends State<MonthlyBar> {
               )
             ],
           ),
-          const Text(
+          Text(
             "Sales data grouped by month",
             style: TextStyle(color: Colors.white54),
           ),
-          const Expanded(child: _BarChart()),
+          Expanded(child: _BarChart()),
         ],
       ),
     );

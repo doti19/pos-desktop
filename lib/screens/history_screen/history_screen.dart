@@ -14,6 +14,6 @@ class HistoryScreen extends StatelessWidget {
         ),
         body: Container(
             color: MyColors.mainContainer,
-            child: Center(child: Text("History"))));
+            child: const Center(child: Text("History"))));
   }
 }

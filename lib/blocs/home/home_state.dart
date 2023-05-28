@@ -5,7 +5,7 @@ abstract class HomeState extends Equatable {
 }
 
 class HomeInitial extends HomeState {
-  HomeInitial();
+  const HomeInitial();
 
   @override
   List<Object?> get props => [];
@@ -13,7 +13,7 @@ class HomeInitial extends HomeState {
 
 class SuccessfulLoginState extends HomeState {
   final String username;
-  SuccessfulLoginState(this.username);
+  const SuccessfulLoginState(this.username);
   @override
   // TODO: implement props
   List<Object?> get props => [username];

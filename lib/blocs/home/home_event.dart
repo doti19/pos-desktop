@@ -11,7 +11,7 @@ class LoginEvent extends HomeEvent {
   final String username;
   final String password;
 
-  LoginEvent(this.username, this.password);
+  const LoginEvent(this.username, this.password);
 
   @override
   List<Object> get props => [username, password];

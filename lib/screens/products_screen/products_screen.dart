@@ -14,6 +14,6 @@ class ProductsScreen extends StatelessWidget {
         ),
         body: Container(
             color: MyColors.mainContainer,
-            child: Center(child: Text("Products"))));
+            child: const Center(child: Text("Products"))));
   }
 }

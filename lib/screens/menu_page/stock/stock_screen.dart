@@ -41,23 +41,23 @@ Widget temporary() {
       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       // crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
+        const Row(
           mainAxisSize: MainAxisSize.min, // direction: Axis.horizontal,
           children: <Widget>[
             Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Switch(value: false, onChanged: null),
                 Text("Negative quantity")
               ],
             ),
             Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Switch(value: false, onChanged: null),
                 Text("Non zero quantity")
               ],
             ),
             Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Switch(value: false, onChanged: null),
                 Text("Zero quantity")
               ],
@@ -70,23 +70,23 @@ Widget temporary() {
           // mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Container(
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 25),
-                margin: EdgeInsets.all(8),
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 25),
+                margin: const EdgeInsets.all(8),
                 color: Colors.red,
                 // width: double.maxFinite,
-                child: Text('0')),
+                child: const Text('0')),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 25),
-                margin: EdgeInsets.all(8),
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 25),
+                margin: const EdgeInsets.all(8),
                 color: Colors.blue,
                 // width: double.maxFinite,
-                child: Text('0')),
+                child: const Text('0')),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 25),
-                margin: EdgeInsets.all(8),
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 25),
+                margin: const EdgeInsets.all(8),
                 color: Colors.green,
                 // width: double.maxFinite,
-                child: Text('0')),
+                child: const Text('0')),
           ],
         ),
       ],
@@ -132,7 +132,7 @@ Widget tableWidget() {
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(2),
                     label: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text("Product Name"),
                     ),
                     // labelText: "Product Name",
@@ -144,7 +144,7 @@ Widget tableWidget() {
               const Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text.rich(
                       TextSpan(
                           text: 'Products count: ',
@@ -161,15 +161,15 @@ Widget tableWidget() {
             ],
           ),
         ),
-        Expanded(child: const ProductsTable()),
+        const Expanded(child: ProductsTable()),
       ],
     ),
   );
 }
 
 Widget ContentHeader() {
-  return Row(
-    children: const <Widget>[],
+  return const Row(
+    children: <Widget>[],
   );
 }
 
@@ -259,15 +259,15 @@ void _printResizeInfo(List<WidgetSizeInfo> dataList) {
 }
 
 Widget TopOptions() {
-  return Padding(
-    padding: const EdgeInsets.all(25.0),
+  return const Padding(
+    padding: EdgeInsets.all(25.0),
     child: Wrap(
       alignment: WrapAlignment.start,
       spacing: 25,
       runSpacing: 25,
       children: [
         Column(
-          children: const <Widget>[
+          children: <Widget>[
             Icon(
               Icons.refresh,
               size: 30,
@@ -279,7 +279,7 @@ Widget TopOptions() {
           ],
         ),
         Column(
-          children: const <Widget>[
+          children: <Widget>[
             Icon(
               Icons.history,
               size: 30,
@@ -315,7 +315,7 @@ Widget TopOptions() {
           ],
         ),
         Column(
-          children: const <Widget>[
+          children: <Widget>[
             Icon(
               Icons.view_compact,
               size: 30,
@@ -355,7 +355,7 @@ Widget TopOptions() {
           ],
         ),
         Column(
-          children: const <Widget>[
+          children: <Widget>[
             Icon(
               Icons.help,
               size: 30,

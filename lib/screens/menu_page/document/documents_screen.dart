@@ -9,9 +9,9 @@ class DocumentsScreen extends StatelessWidget {
   final List<TabData> tabs = [
     TabData(
         text: 'View Documents',
-        content: ViewDocumentsTab(),
+        content: const ViewDocumentsTab(),
         closable: false,
-        leading: (context, status) => Icon(Icons.search)),
+        leading: (context, status) => const Icon(Icons.search)),
     TabData(text: 'hello'),
   ];
   @override
@@ -21,20 +21,20 @@ class DocumentsScreen extends StatelessWidget {
     );
     TabbedViewThemeData themeData = TabbedViewThemeData.dark();
     themeData.tab
-      ..textStyle = TextStyle(fontSize: 15, color: Colors.white)
+      ..textStyle = const TextStyle(fontSize: 15, color: Colors.white)
       ..verticalAlignment = VerticalAlignment.top
       // ..highlightedStatus = TabStatusThemeData(
       //   decoration: BoxDecoration(color: MyColors.primaryVariant),
       // )
       ..selectedStatus = TabStatusThemeData(
           // padding: EdgeInsets.all(5),
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(color: MyColors.secondaryAppColor))
 
       // ..decoration = BoxDecoration(color: MyColors.secondaryAppColor)
-      ..padding = EdgeInsets.all(5);
+      ..padding = const EdgeInsets.all(5);
     themeData.contentArea
-      ..decoration = BoxDecoration(
+      .decoration = BoxDecoration(
         color: MyColors.background,
       );
     Widget w = TabbedViewTheme(

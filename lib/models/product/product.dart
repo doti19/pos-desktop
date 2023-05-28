@@ -1,4 +1,5 @@
-import 'package:equatable/equatable.dart';
+import 'dart:typed_data';
+
 import 'package:hive/hive.dart';
 
 part 'product.g.dart';
@@ -7,4 +8,7 @@ part 'product.g.dart';
 class Product extends HiveObject {
   @HiveField(0)
   late String name;
+
+  @HiveField(1)
+  late Uint8List image;
 }

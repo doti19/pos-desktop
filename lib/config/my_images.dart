@@ -1,6 +1,6 @@
 class MyImages {
   MyImages._();
-  static MyImages _instance = MyImages._();
+  static final MyImages _instance = MyImages._();
   factory MyImages() => _instance;
 
   String image = 'assets/image';

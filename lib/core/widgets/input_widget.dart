@@ -17,7 +17,7 @@ class InputWidget extends StatelessWidget {
   final TextEditingController? kController;
   final String? kInitialValue;
 
-  InputWidget({
+  const InputWidget({super.key, 
     this.hintText,
     this.prefixIcon,
     this.height = 48.0,
@@ -37,8 +37,8 @@ class InputWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(this.topLabel!),
-        SizedBox(height: 4.0),
+        Text(topLabel!),
+        const SizedBox(height: 4.0),
         Container(
           height: 50,
           decoration: BoxDecoration(
@@ -47,17 +47,17 @@ class InputWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: TextFormField(
-            initialValue: this.kInitialValue,
-            controller: this.kController,
-            key: this.kKey,
-            keyboardType: this.keyboardType,
-            onSaved: this.onSaved,
-            onChanged: this.onChanged,
-            validator: this.validator,
-            obscureText: this.obscureText!,
+            initialValue: kInitialValue,
+            controller: kController,
+            key: kKey,
+            keyboardType: keyboardType,
+            onSaved: onSaved,
+            onChanged: onChanged,
+            validator: validator,
+            obscureText: obscureText!,
             decoration: InputDecoration(
-                prefixIcon: this.prefixIcon,
-                enabledBorder: OutlineInputBorder(
+                prefixIcon: prefixIcon,
+                enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color.fromRGBO(74, 77, 84, 0.2),
                   ),
@@ -68,24 +68,24 @@ class InputWidget extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                 ),
-                errorStyle: TextStyle(height: 0, color: Colors.transparent),
+                errorStyle: const TextStyle(height: 0, color: Colors.transparent),
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Theme.of(context).errorColor,
+                    color: Theme.of(context).colorScheme.error,
                   ),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   //gapPaddings: 16,
                   borderSide: BorderSide(
-                    color: Theme.of(context).errorColor,
+                    color: Theme.of(context).colorScheme.error,
                   ),
                 ),
-                hintText: this.hintText,
+                hintText: hintText,
                 hintStyle: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(color: Colors.white54),
-                errorText: this.errorText),
+                errorText: errorText),
           ),
         )
       ],

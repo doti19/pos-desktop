@@ -4,7 +4,6 @@
 // import 'package:app/src/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/menu_page.dart';
 import '../screens/history_screen/history_screen.dart';
 import '../screens/menu_page/home/home_screen.dart';
 import '../screens/menu_page/products/products_screen.dart';
@@ -15,21 +14,21 @@ Route routes(RouteSettings settings) {
   switch (settings.name) {
     case '/':
       // return MaterialPageRoute(builder: (_) => SplashScreen());
-      return MaterialPageRoute(builder: (_) => Index());
+      return MaterialPageRoute(builder: (_) => const Index());
 
     case '/home':
-      return MaterialPageRoute(builder: (_) => Index());
+      return MaterialPageRoute(builder: (_) => const Index());
     case '/menu':
-      return MaterialPageRoute(builder: (context) => HomeScreen());
+      return MaterialPageRoute(builder: (context) => const HomeScreen());
     case '/history':
-      return MaterialPageRoute(builder: (_) => HistoryScreen());
+      return MaterialPageRoute(builder: (_) => const HistoryScreen());
     case '/products':
-      return MaterialPageRoute(builder: (_) => ProductsScreen());
+      return MaterialPageRoute(builder: (_) => const ProductsScreen());
 
     // return MaterialPageRoute(builder: (_) => MenuPage());
     case '/auth':
     // return MaterialPageRoute(builder: (_) => AuthenticationScreen());
     default:
-      return MaterialPageRoute(builder: (_) => SplashScreen());
+      return MaterialPageRoute(builder: (_) => const SplashScreen());
   }
 }

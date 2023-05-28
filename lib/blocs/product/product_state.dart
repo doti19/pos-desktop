@@ -8,7 +8,7 @@ abstract class ProductState extends Equatable {
 }
 
 class ProductInitial extends ProductState {
-  ProductInitial();
+  const ProductInitial();
 
   @override
   List<Object?> get props => [];

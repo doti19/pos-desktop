@@ -19,17 +19,17 @@ class SideMenu extends StatelessWidget {
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: defaultPadding * 3,
                 ),
                 Image.asset(
                   "assets/logo/logo_icon.png",
                   scale: 5,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: defaultPadding,
                 ),
-                Text("Pos Management")
+                const Text("Pos Management")
               ],
             )),
             DrawerListTile(
@@ -108,7 +108,7 @@ class DrawerListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: const TextStyle(color: Colors.white54),
       ),
     );
   }

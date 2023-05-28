@@ -69,9 +69,9 @@ class _ProductsTableState extends State<ProductsTable> {
               columnName: 'code',
               width: columnWidths['code']!,
               label: Container(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Code',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -81,9 +81,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'name',
             width: columnWidths['name']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Name',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -97,9 +97,9 @@ class _ProductsTableState extends State<ProductsTable> {
             // width: 120,
 
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Group',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -111,9 +111,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'barcode',
             width: columnWidths['barcode']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Barcode',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -125,9 +125,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'cost',
             width: columnWidths['cost']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Cost',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -139,9 +139,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'sale_price_before_tax',
             width: columnWidths['sale_price_before_tax']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Sale price before tax',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -153,9 +153,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'taxes',
             width: columnWidths['taxes']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Taxes',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -167,9 +167,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'sale_price',
             width: columnWidths['sale_price']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Sale price',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -181,9 +181,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'active',
             width: columnWidths['active']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Active',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -195,9 +195,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'unit_of_measurement',
             width: columnWidths['unit_of_measurement']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Unit of measurement',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -209,9 +209,9 @@ class _ProductsTableState extends State<ProductsTable> {
             columnName: 'created',
             width: columnWidths['created']!,
             label: Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Created',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -225,7 +225,7 @@ class _ProductsTableState extends State<ProductsTable> {
             label: Container(
               // padding: EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Updated',
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -325,7 +325,7 @@ class EmployeeDataSource extends DataGridSource {
         //     ? Alignment.centerRight
         //     : Alignment.centerLeft,
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Text(
           dataGridCell.value.toString(),
           style: const TextStyle(

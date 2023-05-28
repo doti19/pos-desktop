@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:pos_desktop2/blocs/product/product_bloc.dart';
 import 'package:pos_desktop2/models/product/product.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/comments_tab.dart';
@@ -7,17 +8,23 @@ import 'package:pos_desktop2/screens/menu_page/products/components/new_product/t
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/price_n_tax_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/print_stations_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/stock_control_tab.dart';
+import 'package:pos_desktop2/screens/menu_page/products/components/new_product/xoxo.dart';
 import 'package:tab_container/tab_container.dart';
 
 // import '../../../../../blocs/product/product_bloc.dart';
 import '../../../../../config/my_colors.dart';
-import '../../../../../db/boxes.dart';
 // import '../../../../../models/product/product.dart';
 import 'tabs/details_tab.dart';
-import 'tabs/yoho.dart';
 
-class NewProduct extends StatelessWidget {
+class NewProduct extends StatefulWidget {
   const NewProduct({super.key});
+
+  @override
+  State<NewProduct> createState() => _NewProductState();
+}
+
+class _NewProductState extends State<NewProduct> {
+  final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,22 +53,39 @@ class NewProduct extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: TabContainer(
-            color: MyColors.background,
-            tabEdge: TabEdge.left,
-            tabStart: 0.1,
-            tabEnd: 0.6,
-            tabExtent: 80,
-            childPadding: const EdgeInsets.all(10.0),
-            children: _getChildren4(),
-            tabs: _getTabs4(),
-            selectedTextStyle: const TextStyle(
-              color: Colors.white,
-              fontSize: 15.0,
-            ),
-            unselectedTextStyle: TextStyle(
-              color: MyColors.primary,
-              fontSize: 13.0,
+          child: FormBuilder(
+            key: _formKey,
+            // enabled: false,
+            onChanged: () {
+              _formKey.currentState!.save();
+              debugPrint(_formKey.currentState!.value.toString());
+            },
+            autovalidateMode: AutovalidateMode.disabled,
+            // initialValue: const {
+            //   'movie_rating': 5,
+            //   'best_language': 'Dart',
+            //   'age': '13',
+            //   'gender': 'Male',
+            //   'languages_filter': ['Dart']
+            // },
+            // skipDisabled: true,
+            child: TabContainer(
+              color: MyColors.background,
+              tabEdge: TabEdge.left,
+              tabStart: 0.1,
+              tabEnd: 0.6,
+              tabExtent: 80,
+              childPadding: const EdgeInsets.all(10.0),
+              tabs: _getTabs4(),
+              selectedTextStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+              ),
+              unselectedTextStyle: TextStyle(
+                color: MyColors.primary,
+                fontSize: 13.0,
+              ),
+              children: _getChildren4(_formKey),
             ),
           ),
         ),
@@ -77,9 +101,12 @@ class NewProduct extends StatelessWidget {
                       style: BorderStyle.solid)),
                 ),
                 onPressed: () {
-                  context
-                      .read<ProductBloc>()
-                      .add(AddDataEvent(product: Product()..name = 'yoni'));
+                  // context.read<ProductBloc>().add(DeleteAllProductsEvent());
+
+                  // context.read<ProductBloc>().add(
+                  //     AddDataEvent(product: Product()..name = 'new product'));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const XoXo()));
                 },
                 icon: const Icon(Icons.check, color: Colors.grey),
                 label: const Text(
@@ -101,7 +128,7 @@ class NewProduct extends StatelessWidget {
                   // _formKey.currentState?.reset();
                 },
                 // color: Theme.of(context).colorScheme.secondary,
-                icon: Icon(Icons.close, color: Colors.grey),
+                icon: const Icon(Icons.close, color: Colors.grey),
                 label: Text(
                   'Cancel',
                   style:
@@ -124,14 +151,14 @@ class NewProduct extends StatelessWidget {
   }
 }
 
-List<Widget> _getChildren4() => <Widget>[
-      DetailsTab(),
-      PriceAndTax(),
-      StockControl(),
-      ImageAndColor(),
-      Comments(),
-      PrintStations(),
-      Yoho(),
+List<Widget> _getChildren4(GlobalKey<FormBuilderState> formKey) => <Widget>[
+      DetailsTab(formKey: formKey),
+      PriceAndTax(formKey: formKey),
+      StockControl(formKey: formKey),
+      ImageAndColor(formKey: formKey),
+      Comments(formKey: formKey),
+      const PrintStations(),
+      // Yoho(),
     ];
 
 List<String> _getTabs4() {
@@ -142,6 +169,6 @@ List<String> _getTabs4() {
     'Image & color',
     'Comments',
     'print stations',
-    'yoho'
+    // 'yoho'
   ];
 }

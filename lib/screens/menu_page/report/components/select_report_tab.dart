@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:resizable_widget/resizable_widget.dart';
 
 import '../../../../config/my_colors.dart';
@@ -39,9 +38,9 @@ Widget MainContentResizable() {
         //     TreeNode(content: Text("child21")),
         //   ]),
         // ]),
-        child: Text('yo '),
+        child: const Text('yo '),
       ),
-      FilterSection(),
+      const FilterSection(),
     ],
   );
 }

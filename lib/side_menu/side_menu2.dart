@@ -23,20 +23,20 @@ class _SideMenu2State extends State<SideMenu2> {
                 child: ListView(
                   children: [
                     ListTile(
-                      title: Text('Menu Item 1'),
+                      title: const Text('Menu Item 1'),
                       onTap: () {
                         setState(() {
                           _isSubMenuOpen = true;
                         });
                       },
                     ),
-                    ListTile(
+                    const ListTile(
                       title: Text('Menu Item 2'),
                     ),
-                    ListTile(
+                    const ListTile(
                       title: Text('Menu Item 3'),
                     ),
-                    ListTile(
+                    const ListTile(
                       title: Text('Menu Item 4'),
                     ),
                   ],
@@ -45,7 +45,7 @@ class _SideMenu2State extends State<SideMenu2> {
               Expanded(
                 child: Container(
                   color: Colors.white,
-                  child: Center(
+                  child: const Center(
                     child: Text('Main Content'),
                   ),
                 ),
@@ -53,7 +53,7 @@ class _SideMenu2State extends State<SideMenu2> {
             ],
           ),
           AnimatedPositioned(
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             top: 0,
             bottom: 0,
             left: _isSubMenuOpen ? 200 : MediaQuery.of(context).size.width,
@@ -61,7 +61,7 @@ class _SideMenu2State extends State<SideMenu2> {
             child: Container(
               color: Colors.blueGrey,
               child: ListView(
-                children: [
+                children: const [
                   ListTile(
                     title: Text('Sub-Menu Item 1'),
                   ),

@@ -37,15 +37,15 @@ class DailyInfoModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.title;
-    data['volumeData'] = this.volumeData;
-    data['icon'] = this.icon;
-    data['totalStorage'] = this.totalStorage;
-    data['color'] = this.color;
-    data['percentage'] = this.percentage;
-    data['colors'] = this.colors;
-    data['spots'] = this.spots;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['volumeData'] = volumeData;
+    data['icon'] = icon;
+    data['totalStorage'] = totalStorage;
+    data['color'] = color;
+    data['percentage'] = percentage;
+    data['colors'] = colors;
+    data['spots'] = spots;
     return data;
   }
 }
@@ -66,39 +66,39 @@ var dailyData = [
     "color": primaryColor,
     "percentage": 35,
     "colors": [
-      Color(0xff23b6e6),
-      Color(0xff02d39a),
+      const Color(0xff23b6e6),
+      const Color(0xff02d39a),
     ],
     "spots": [
-      FlSpot(
+      const FlSpot(
         1,
         2,
       ),
-      FlSpot(
+      const FlSpot(
         2,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         3,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         4,
         1.5,
       ),
-      FlSpot(
+      const FlSpot(
         5,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         6,
         2.2,
       ),
-      FlSpot(
+      const FlSpot(
         7,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         8,
         1.5,
       )
@@ -109,39 +109,39 @@ var dailyData = [
     "volumeData": 1328,
     "icon": FlutterIcons.message1_ant,
     "totalStorage": "+ %5",
-    "color": Color(0xFFFFA113),
+    "color": const Color(0xFFFFA113),
     "percentage": 35,
-    "colors": [Color(0xfff12711), Color(0xfff5af19)],
+    "colors": [const Color(0xfff12711), const Color(0xfff5af19)],
     "spots": [
-      FlSpot(
+      const FlSpot(
         1,
         1.3,
       ),
-      FlSpot(
+      const FlSpot(
         2,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         3,
         4,
       ),
-      FlSpot(
+      const FlSpot(
         4,
         1.5,
       ),
-      FlSpot(
+      const FlSpot(
         5,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         6,
         3,
       ),
-      FlSpot(
+      const FlSpot(
         7,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         8,
         1.5,
       )
@@ -152,39 +152,39 @@ var dailyData = [
     "volumeData": 1328,
     "icon": FlutterIcons.comment_alt_faw5s,
     "totalStorage": "+ %8",
-    "color": Color(0xFFA4CDFF),
+    "color": const Color(0xFFA4CDFF),
     "percentage": 10,
-    "colors": [Color(0xff2980B9), Color(0xff6DD5FA)],
+    "colors": [const Color(0xff2980B9), const Color(0xff6DD5FA)],
     "spots": [
-      FlSpot(
+      const FlSpot(
         1,
         1.3,
       ),
-      FlSpot(
+      const FlSpot(
         2,
         5,
       ),
-      FlSpot(
+      const FlSpot(
         3,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         4,
         6,
       ),
-      FlSpot(
+      const FlSpot(
         5,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         6,
         2.2,
       ),
-      FlSpot(
+      const FlSpot(
         7,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         8,
         1,
       )
@@ -195,39 +195,39 @@ var dailyData = [
     "volumeData": 1328,
     "icon": FlutterIcons.heart_faw5s,
     "totalStorage": "+ %8",
-    "color": Color(0xFFd50000),
+    "color": const Color(0xFFd50000),
     "percentage": 10,
-    "colors": [Color(0xff93291E), Color(0xffED213A)],
+    "colors": [const Color(0xff93291E), const Color(0xffED213A)],
     "spots": [
-      FlSpot(
+      const FlSpot(
         1,
         3,
       ),
-      FlSpot(
+      const FlSpot(
         2,
         4,
       ),
-      FlSpot(
+      const FlSpot(
         3,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         4,
         1.5,
       ),
-      FlSpot(
+      const FlSpot(
         5,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         6,
         2.2,
       ),
-      FlSpot(
+      const FlSpot(
         7,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         8,
         1.5,
       )
@@ -238,39 +238,39 @@ var dailyData = [
     "volumeData": 5328,
     "icon": FlutterIcons.bell_faw5s,
     "totalStorage": "- %5",
-    "color": Color(0xFF00F260),
+    "color": const Color(0xFF00F260),
     "percentage": 78,
-    "colors": [Color(0xff0575E6), Color(0xff00F260)],
+    "colors": [const Color(0xff0575E6), const Color(0xff00F260)],
     "spots": [
-      FlSpot(
+      const FlSpot(
         1,
         1.3,
       ),
-      FlSpot(
+      const FlSpot(
         2,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         3,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         4,
         1.5,
       ),
-      FlSpot(
+      const FlSpot(
         5,
         1.0,
       ),
-      FlSpot(
+      const FlSpot(
         6,
         2.2,
       ),
-      FlSpot(
+      const FlSpot(
         7,
         1.8,
       ),
-      FlSpot(
+      const FlSpot(
         8,
         1.5,
       )

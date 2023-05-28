@@ -191,7 +191,7 @@ class _FilterSectionState extends State<FilterSection> {
                     child: FormBuilderSwitch(
                       title: const Text('Include subgroups'),
                       name: 'include_subgroups',
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration: const InputDecoration(border: InputBorder.none),
                       activeColor: MyColors.primary,
                       activeTrackColor: MyColors.primaryVariant,
                       controlAffinity: ListTileControlAffinity.leading,
@@ -289,28 +289,28 @@ class _FilterSectionState extends State<FilterSection> {
                       children: <Widget>[
                         _myOutlineButton(
                             name: 'Show report',
-                            icon: Icon(Icons.search, size: 20),
+                            icon: const Icon(Icons.search, size: 20),
                             onPressed: () {
                               print('Show report');
                             },
                             context: context),
                         _myOutlineButton(
                             name: 'Print',
-                            icon: Icon(Icons.print, size: 20),
+                            icon: const Icon(Icons.print, size: 20),
                             onPressed: () {
                               print('Print');
                             },
                             context: context),
                         _myOutlineButton(
                             name: 'Excel',
-                            icon: Icon(Icons.note_add, size: 20),
+                            icon: const Icon(Icons.note_add, size: 20),
                             onPressed: () {
                               print('Excel');
                             },
                             context: context),
                         _myOutlineButton(
                             name: 'PDF',
-                            icon: Icon(Icons.picture_as_pdf, size: 20),
+                            icon: const Icon(Icons.picture_as_pdf, size: 20),
                             onPressed: () {
                               print('PDF');
                             },
@@ -340,7 +340,7 @@ class _FilterSectionState extends State<FilterSection> {
       icon: icon,
       label: Text(
         name,
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.normal,
           fontSize: 20,
         ),

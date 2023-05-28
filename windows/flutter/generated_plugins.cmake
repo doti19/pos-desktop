@@ -5,6 +5,8 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   bitsdojo_window_windows
   dynamic_color
+  file_selector_windows
+  rive_common
   system_theme
 )
 

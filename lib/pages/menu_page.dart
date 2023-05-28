@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:sidebarx/sidebarx.dart';
 
 import '../config/my_colors.dart';
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 // import 'package:flutter_side_menu/flutter_side_menu.dart';
 import 'package:animated_sidebar/animated_sidebar.dart';
 
 // import '../screens/menu_page/dashboard.dart';
 
 class MenuPage extends StatefulWidget {
-  MenuPage({super.key});
+  const MenuPage({super.key});
 
   @override
   State<MenuPage> createState() => _MenuPageState();

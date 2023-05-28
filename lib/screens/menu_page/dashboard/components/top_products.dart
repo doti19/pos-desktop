@@ -18,18 +18,18 @@ class ReportItems extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(fontSize: 20, color: Colors.white60),
+            style: const TextStyle(fontSize: 20, color: Colors.white60),
           ),
           Container(
             alignment: Alignment.center,
             // width: 300,
             height: 200,
             child: data < 0
-                ? Text("No data to display",
+                ? const Text("No data to display",
                     style: TextStyle(fontSize: 15, color: Colors.white54))
                 : Text(
                     "$data",
-                    style: TextStyle(fontSize: 40, color: Colors.white),
+                    style: const TextStyle(fontSize: 40, color: Colors.white),
                   ),
           ),
         ],
