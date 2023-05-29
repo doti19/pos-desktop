@@ -37,7 +37,29 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       try {
         product = event.product;
         product!.name = event.name;
+        product!.code = event.code;
+        product!.barcode = event.barcode;
+        product!.unitOfMeasurement = event.unitOfMeasurement;
+        product!.group = event.group;
+        product!.isActive = event.isActive;
+        product!.isDefaultQuantity = event.isDefaultQuantity;
+        product!.isService = event.isService;
+        product!.age = event.age;
+        product!.description = event.description;
+        product!.cost = event.cost;
+        product!.markup = event.markup;
+        product!.salePrice = event.salePrice;
+        product!.doesPriceIncludeTax = event.doesPriceIncludeTax;
+        product!.isPriceChangeAllowed = event.isPriceChangeAllowed;
+        product!.supplier = event.supplier;
+        product!.reorderPoint = event.reorderPoint;
+        product!.preferredQuantity = event.preferredQuantity;
+        product!.lowStockWarning = event.lowStockWarning;
+        product!.lowStockWarningQuantity = event.lowStockWarningQuantity;
+
+        product!.color = event.color;
         product!.image = event.image;
+        product!.comments = event.comments;
 
         product!.save();
         add(const FetchAllProductEvent());
@@ -46,10 +68,13 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       }
     });
 
-    on<DeleteAllProductsEvent>((event, Emit) {
+    on<DeleteAllProductsEvent>((event, Emit) async {
       try {
         final box = Boxes.getProducts();
-        box.clear();
+
+        await box.clear();
+
+        add(const FetchAllProductEvent());
       } catch (e) {
         print('failed deleteAllProducts');
       }

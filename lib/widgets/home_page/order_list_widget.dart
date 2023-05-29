@@ -63,7 +63,7 @@ class OrderWidget extends StatelessWidget {
       shrinkWrap: true,
       itemCount: 4,
       itemBuilder: (context, index) {
-        int item = 1;
+        // int item = 1;
         return Card(
           elevation: 8.0,
           margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),

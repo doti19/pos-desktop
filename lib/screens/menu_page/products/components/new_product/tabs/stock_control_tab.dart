@@ -19,10 +19,10 @@ class _StockControlState extends State<StockControl> {
   // final widget.formKey = GlobalKey<FormBuilderState>();
   void _onChanged(dynamic val) => debugPrint(val.toString());
   // bool _taxHasError = false;
-  bool _reorderPointHasError = false;
-  bool _preferredQuantityHasError = false;
-  bool _lowStockWarningQuantityHasError = false;
-  List<String> supplierOptions = ['(none)', 'Unknown'];
+  // bool _reorderPointHasError = false;
+  // bool _preferredQuantityHasError = false;
+  // bool _lowStockWarningQuantityHasError = false;
+  List<String> supplierOptions = ['none', 'Unknown'];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -89,12 +89,12 @@ class _StockControlState extends State<StockControl> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _reorderPointHasError = !(widget
-                            .formKey.currentState?.fields['reorderPoint']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _reorderPointHasError = !(widget
+                  //           .formKey.currentState?.fields['reorderPoint']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -127,12 +127,12 @@ class _StockControlState extends State<StockControl> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _preferredQuantityHasError = !(widget
-                            .formKey.currentState?.fields['preferredQuantity']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _preferredQuantityHasError = !(widget
+                  //           .formKey.currentState?.fields['preferredQuantity']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -181,12 +181,12 @@ class _StockControlState extends State<StockControl> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _lowStockWarningQuantityHasError = !(widget.formKey
-                            .currentState?.fields['lowStockWarningQuantity']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _lowStockWarningQuantityHasError = !(widget.formKey
+                  //           .currentState?.fields['lowStockWarningQuantity']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([

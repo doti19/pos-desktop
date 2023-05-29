@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:pos_desktop2/config/my_colors.dart';
-import 'package:textfield_tags/textfield_tags.dart';
+// import 'package:textfield_tags/textfield_tags.dart';
 // import 'package:flutter_tags/flutter_tags.dart';
 
-
 import 'package:material_tag_editor/tag_editor.dart' as tag;
-
 
 class DetailsTab extends StatefulWidget {
   final formKey;
@@ -21,26 +19,26 @@ class _DetailsTabState extends State<DetailsTab> {
   bool readOnly = false;
   bool showSegmentedControl = true;
   // final widget.formKey = GlobalKey<FormBuilderState>();
-  bool _ageHasError = false;
-  bool _codeHasError = false;
-  final bool _barcodeHasError = false;
-  bool _nameHasError = true;
-  bool _unitOfMeasurementHasError = false;
-  final bool _descriptionHasError = false;
+  // bool _ageHasError = false;
+  // bool _codeHasError = false;
+  // final bool _barcodeHasError = false;
+  // bool _nameHasError = true;
+  // bool _unitOfMeasurementHasError = false;
+  // final bool _descriptionHasError = false;
 
-  bool _groupHasError = false;
+  // bool _groupHasError = false;
 
   List<String> groupOptions = ['Products', 'Products/stg'];
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
-  late double _distanceToField;
-  final TextfieldTagsController _controller = TextfieldTagsController();
+  // late double _distanceToField;
+  // final TextfieldTagsController _controller = TextfieldTagsController();
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _distanceToField = MediaQuery.of(context).size.width;
+    // _distanceToField = MediaQuery.of(context).size.width;
   }
 
   _onDelete(index) {
@@ -60,8 +58,8 @@ class _DetailsTabState extends State<DetailsTab> {
   // final TextEditingController _textEditingController = TextEditingController();
   final List<String> values = [];
 
-  final List _items = [];
-  final double _fontSize = 14;
+  // final List _items = [];
+  // final double _fontSize = 14;
 
   @override
   void initState() {
@@ -71,8 +69,8 @@ class _DetailsTabState extends State<DetailsTab> {
     //     !(widget.formKey.currentState?.fields['name']?.validate() ?? false);
   }
 
-  final List<String> _myList = [];
-  final List<String> _myListCustom = [];
+  // final List<String> _myList = [];
+  // final List<String> _myListCustom = [];
 
   List<String> _values = [];
   final FocusNode _focusNode = FocusNode();
@@ -126,11 +124,11 @@ class _DetailsTabState extends State<DetailsTab> {
                 //     : const Icon(Icons.check, color: Colors.green),
               ),
               onChanged: (val) {
-                setState(() {
-                  _nameHasError = !(widget.formKey.currentState?.fields['name']
-                          ?.validate() ??
-                      false);
-                });
+                // setState(() {
+                //   _nameHasError = !(widget.formKey.currentState?.fields['name']
+                //           ?.validate() ??
+                //       false);
+                // });
               },
               // valueTransformer: (text) => num.tryParse(text),
               validator: FormBuilderValidators.compose([
@@ -179,12 +177,12 @@ class _DetailsTabState extends State<DetailsTab> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _codeHasError = !(widget
-                            .formKey.currentState?.fields['code']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _codeHasError = !(widget
+                  //           .formKey.currentState?.fields['code']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -382,7 +380,7 @@ class _DetailsTabState extends State<DetailsTab> {
               width: 200,
               child: FormBuilderTextField(
                 autovalidateMode: AutovalidateMode.always,
-                name: 'Unit_of_measurement',
+                name: 'unitOfMeasurement',
 
                 decoration: const InputDecoration(
                   fillColor: Colors.black12,
@@ -393,12 +391,12 @@ class _DetailsTabState extends State<DetailsTab> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _unitOfMeasurementHasError = !(widget
-                            .formKey.currentState?.fields['unit_of_measurement']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _unitOfMeasurementHasError = !(widget
+                  //           .formKey.currentState?.fields['unitOfMeasurement']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -441,12 +439,12 @@ class _DetailsTabState extends State<DetailsTab> {
                       ))
                   .toList(),
               onChanged: (val) {
-                setState(() {
-                  _groupHasError = !(widget
-                          .formKey.currentState?.fields['group']
-                          ?.validate() ??
-                      false);
-                });
+                // setState(() {
+                //   _groupHasError = !(widget
+                //           .formKey.currentState?.fields['group']
+                //           ?.validate() ??
+                //       false);
+                // });
               },
               valueTransformer: (val) => val?.toString(),
             ),
@@ -455,7 +453,7 @@ class _DetailsTabState extends State<DetailsTab> {
               width: 150,
               child: FormBuilderSwitch(
                 title: const Text('Active'),
-                name: 'active',
+                name: 'isActive',
                 decoration: const InputDecoration(border: InputBorder.none),
                 activeColor: MyColors.primary,
                 activeTrackColor: MyColors.primaryVariant,
@@ -468,7 +466,7 @@ class _DetailsTabState extends State<DetailsTab> {
               width: 150,
               child: FormBuilderSwitch(
                 title: const Text('Default quantity'),
-                name: 'default_quantity',
+                name: 'isDefaultQuantity',
                 decoration: const InputDecoration(border: InputBorder.none),
                 activeColor: MyColors.primary,
                 activeTrackColor: MyColors.primaryVariant,
@@ -481,7 +479,7 @@ class _DetailsTabState extends State<DetailsTab> {
               width: 250,
               child: FormBuilderSwitch(
                 title: const Text('Service (not using stock)'),
-                name: 'service',
+                name: 'isService',
                 decoration: const InputDecoration(border: InputBorder.none),
                 activeColor: MyColors.primary,
                 activeTrackColor: MyColors.primaryVariant,
@@ -508,11 +506,11 @@ class _DetailsTabState extends State<DetailsTab> {
                   ),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _ageHasError = !(widget.formKey.currentState?.fields['age']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _ageHasError = !(widget.formKey.currentState?.fields['age']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([

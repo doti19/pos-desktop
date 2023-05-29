@@ -54,7 +54,7 @@ class Index extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    SideMenuController page = SideMenuController();
+    // SideMenuController page = SideMenuController();
     return Scaffold(
       backgroundColor: MyColors.background,
       body: Row(

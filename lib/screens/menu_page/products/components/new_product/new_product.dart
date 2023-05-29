@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:pos_desktop2/blocs/product/product_bloc.dart';
-import 'package:pos_desktop2/models/product/product.dart';
+// import 'package:pos_desktop2/blocs/product/product_bloc.dart';
+// import 'package:pos_desktop2/models/product/product.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/comments_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/image_n_color_tab.dart';
 import 'package:pos_desktop2/screens/menu_page/products/components/new_product/tabs/price_n_tax_tab.dart';
@@ -12,8 +14,10 @@ import 'package:pos_desktop2/screens/menu_page/products/components/new_product/x
 import 'package:tab_container/tab_container.dart';
 
 // import '../../../../../blocs/product/product_bloc.dart';
+import '../../../../../blocs/product/product_bloc.dart';
 import '../../../../../config/my_colors.dart';
 // import '../../../../../models/product/product.dart';
+import '../../../../../models/product/product.dart';
 import 'tabs/details_tab.dart';
 
 class NewProduct extends StatefulWidget {
@@ -101,10 +105,88 @@ class _NewProductState extends State<NewProduct> {
                       style: BorderStyle.solid)),
                 ),
                 onPressed: () {
-                  // context.read<ProductBloc>().add(DeleteAllProductsEvent());
-
+                  // print('deleted');
                   // context.read<ProductBloc>().add(
                   //     AddDataEvent(product: Product()..name = 'new product'));
+                  // print(
+                  //     'name: ${_formKey.currentState!.fields['name']!.value}');
+                  //
+                  // print(int.parse_formKey.currentState!.fields['age']!.value ?? -1);
+
+//TODO--> name shouldn't have an empty string value as default
+                  final String name =
+                      _formKey.currentState!.fields['name']!.value ?? '';
+                  final String code =
+                      _formKey.currentState!.fields['code']!.value ?? '';
+                  final List<String> barcode =
+                      _formKey.currentState!.fields['barcode']!.value ?? [];
+                  final String unitOfMeasurement = _formKey
+                          .currentState!.fields['unitOfMeasurement']!.value ??
+                      '';
+                  final String group =
+                      _formKey.currentState!.fields['group']!.value;
+                  final bool isActive =
+                      _formKey.currentState!.fields['isActive']!.value;
+                  final bool isDefaultQuantity =
+                      _formKey.currentState!.fields['isDefaultQuantity']!.value;
+                  final bool isService =
+                      _formKey.currentState!.fields['isService']!.value;
+                  final String age =
+                      _formKey.currentState!.fields['age']!.value ?? '';
+                  final String description =
+                      _formKey.currentState!.fields['description']!.value ?? '';
+                  final double cost = double.parse(
+                      _formKey.currentState!.fields['cost']!.value);
+                  final double markup = double.parse(
+                      _formKey.currentState!.fields['markup']!.value);
+                  final double salePrice = double.parse(
+                      _formKey.currentState!.fields['salePrice']!.value);
+                  final bool doesPriceIncludeTax = _formKey
+                      .currentState!.fields['doesPriceIncludeTax']!.value;
+                  final bool isPriceChangeAllowed = _formKey
+                      .currentState!.fields['isPriceChangeAllowed']!.value;
+                  final String supplier =
+                      _formKey.currentState!.fields['supplier']!.value;
+                  final int reorderPoint = int.parse(
+                      _formKey.currentState!.fields['reorderPoint']!.value);
+                  final int preferredQuantity = int.parse(_formKey
+                      .currentState!.fields['preferredQuantity']!.value);
+                  final bool lowStockWarning =
+                      _formKey.currentState!.fields['lowStockWarning']!.value;
+                  final int lowStockWarningQuantity = int.parse(_formKey
+                      .currentState!.fields['lowStockWarningQuantity']!.value);
+                  final String color =
+                      _formKey.currentState!.fields['color']!.value;
+                  final Uint8List? image =
+                      _formKey.currentState!.fields['image']!.value;
+                  final List<String> comments =
+                      _formKey.currentState!.fields['comments']!.value ?? [];
+
+                  context.read<ProductBloc>().add(AddDataEvent(
+                      product: Product()
+                        ..name = name
+                        ..code = code
+                        ..barcode = barcode
+                        ..unitOfMeasurement = unitOfMeasurement
+                        ..group = group
+                        ..isActive = isActive
+                        ..isDefaultQuantity = isDefaultQuantity
+                        ..isService = isService
+                        ..age = age
+                        ..description = description
+                        ..cost = cost
+                        ..markup = markup
+                        ..salePrice = salePrice
+                        ..doesPriceIncludeTax = doesPriceIncludeTax
+                        ..isPriceChangeAllowed = isPriceChangeAllowed
+                        ..supplier = supplier
+                        ..reorderPoint = reorderPoint
+                        ..preferredQuantity = preferredQuantity
+                        ..lowStockWarning = lowStockWarning
+                        ..lowStockWarningQuantity = lowStockWarningQuantity
+                        ..color = color
+                        ..image = image
+                        ..comments = comments));
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => const XoXo()));
                 },
@@ -125,6 +207,8 @@ class _NewProductState extends State<NewProduct> {
                       style: BorderStyle.solid)),
                 ),
                 onPressed: () {
+                  context.read<ProductBloc>().add(DeleteAllProductsEvent());
+
                   // _formKey.currentState?.reset();
                 },
                 // color: Theme.of(context).colorScheme.secondary,

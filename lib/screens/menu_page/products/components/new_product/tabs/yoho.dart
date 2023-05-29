@@ -43,10 +43,12 @@ class Yoho extends StatelessWidget {
                                         : Colors.brown,
                                     child: Row(
                                       children: [
+                                        Text('Name: ${state.products[i].name}'),
+                                        Text('code: ${state.products[i].code}'),
+                                        Text('cost: ${state.products[i].cost}'),
                                         Image.memory(
-                                          state.products[i].image,
+                                          state.products[i].image!,
                                         ),
-                                        Text(state.products[i].name)
                                       ],
                                     ))));
                       }),

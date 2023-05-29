@@ -18,7 +18,7 @@ class _DetailsTabState extends State<DetailsTab> {
   final _formKey = GlobalKey<FormBuilderState>();
 
   bool _nameHasError = true;
-  bool _groupHasError = false;
+  // bool _groupHasError = false;
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
@@ -103,11 +103,11 @@ class _DetailsTabState extends State<DetailsTab> {
                           ))
                       .toList(),
                   onChanged: (val) {
-                    setState(() {
-                      _groupHasError = !(_formKey.currentState?.fields['group']
-                              ?.validate() ??
-                          false);
-                    });
+                    // setState(() {
+                    //   // _groupHasError = !(_formKey.currentState?.fields['group']
+                    //   //         ?.validate() ??
+                    //   //     false);
+                    // });
                   },
                   valueTransformer: (val) => val?.toString(),
                 ),

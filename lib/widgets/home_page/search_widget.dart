@@ -4,12 +4,12 @@ import '../../config/my_colors.dart';
 
 class Search extends StatelessWidget {
   Search({super.key});
-  final List<String> _chooseMethod = [
-    "Name",
-    "Barcode",
-    "Product Code",
-  ];
-  final int _selectedIndex = 0;
+  // final List<String> _chooseMethod = [
+  //   "Name",
+  //   "Barcode",
+  //   "Product Code",
+  // ];
+  // final int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {

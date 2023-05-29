@@ -19,13 +19,13 @@ class _PriceAndTaxState extends State<PriceAndTax> {
   // final widget.formKey = GlobalKey<FormBuilderState>();
   void _onChanged(dynamic val) => debugPrint(val.toString());
   // bool _taxHasError = false;
-  bool _costHasError = false;
-  bool _markupHasError = false;
-  bool _salePriceHasError = false;
+  // bool _costHasError = false;
+  // bool _markupHasError = false;
+  // bool _salePriceHasError = false;
   List<String> taxOptions = ['eth(15%)', 'eth1(30%)'];
 
   final Map<String, Widget> _taxesList = {};
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +79,12 @@ class _PriceAndTaxState extends State<PriceAndTax> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _costHasError = !(widget
-                            .formKey.currentState?.fields['cost']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _costHasError = !(widget
+                  //           .formKey.currentState?.fields['cost']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -117,12 +117,12 @@ class _PriceAndTaxState extends State<PriceAndTax> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _markupHasError = !(widget
-                            .formKey.currentState?.fields['markup']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _markupHasError = !(widget
+                  //           .formKey.currentState?.fields['markup']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -151,12 +151,12 @@ class _PriceAndTaxState extends State<PriceAndTax> {
                   //     : const Icon(Icons.check, color: Colors.green),
                 ),
                 onChanged: (val) {
-                  setState(() {
-                    _salePriceHasError = !(widget
-                            .formKey.currentState?.fields['salePrice']
-                            ?.validate() ??
-                        false);
-                  });
+                  // setState(() {
+                  //   _salePriceHasError = !(widget
+                  //           .formKey.currentState?.fields['salePrice']
+                  //           ?.validate() ??
+                  //       false);
+                  // });
                 },
                 // valueTransformer: (text) => num.tryParse(text),
                 validator: FormBuilderValidators.compose([
@@ -176,7 +176,7 @@ class _PriceAndTaxState extends State<PriceAndTax> {
               child: FormBuilderSwitch(
                 title: const Text('Price includes tax',
                     style: TextStyle(fontWeight: FontWeight.normal)),
-                name: 'price_incl_tax',
+                name: 'doesPriceIncludeTax',
                 decoration: const InputDecoration(border: InputBorder.none),
                 activeColor: MyColors.primary,
                 activeTrackColor: MyColors.primaryVariant,
@@ -190,7 +190,7 @@ class _PriceAndTaxState extends State<PriceAndTax> {
               child: FormBuilderSwitch(
                 title: const Text('Price change allowed',
                     style: TextStyle(fontWeight: FontWeight.normal)),
-                name: 'price_change_allowed',
+                name: 'isPriceChangeAllowed',
                 decoration: const InputDecoration(border: InputBorder.none),
                 activeColor: MyColors.primary,
                 activeTrackColor: MyColors.primaryVariant,
