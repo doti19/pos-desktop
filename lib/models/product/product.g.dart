@@ -39,13 +39,15 @@ class ProductAdapter extends TypeAdapter<Product> {
       ..lowStockWarningQuantity = fields[19] as int
       ..color = fields[20] as String
       ..image = fields[21] as Uint8List?
-      ..comments = (fields[22] as List).cast<String>();
+      ..comments = (fields[22] as List).cast<String>()
+      ..createdAt = fields[23] as String
+      ..updatedAt = fields[24] as String;
   }
 
   @override
   void write(BinaryWriter writer, Product obj) {
     writer
-      ..writeByte(23)
+      ..writeByte(25)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -91,7 +93,11 @@ class ProductAdapter extends TypeAdapter<Product> {
       ..writeByte(21)
       ..write(obj.image)
       ..writeByte(22)
-      ..write(obj.comments);
+      ..write(obj.comments)
+      ..writeByte(23)
+      ..write(obj.createdAt)
+      ..writeByte(24)
+      ..write(obj.updatedAt);
   }
 
   @override

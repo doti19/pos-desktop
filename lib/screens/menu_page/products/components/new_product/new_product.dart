@@ -115,7 +115,7 @@ class _NewProductState extends State<NewProduct> {
 
 //TODO--> name shouldn't have an empty string value as default
                   final String name =
-                      _formKey.currentState!.fields['name']!.value ?? '';
+                      _formKey.currentState!.fields['name']!.value ?? 'xxx';
                   final String code =
                       _formKey.currentState!.fields['code']!.value ?? '';
                   final List<String> barcode =
@@ -187,6 +187,7 @@ class _NewProductState extends State<NewProduct> {
                         ..color = color
                         ..image = image
                         ..comments = comments));
+
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => const XoXo()));
                 },

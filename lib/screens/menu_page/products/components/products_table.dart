@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
+import '../../../../blocs/product/product_bloc.dart';
 import '../../../../config/my_colors.dart';
+import '../../../../models/product/product.dart';
 
 class ProductsTable extends StatefulWidget {
   const ProductsTable({super.key});
@@ -11,31 +14,14 @@ class ProductsTable extends StatefulWidget {
 }
 
 class _ProductsTableState extends State<ProductsTable> {
-  List<Employee> employees = <Employee>[];
-
-  late EmployeeDataSource employeeDataSource;
+  // late ProductDataSource employeeDataSource;
 
   @override
   void initState() {
     super.initState();
     WidgetsFlutterBinding.ensureInitialized();
-    employees = getEmployees();
-    employeeDataSource = EmployeeDataSource(employees: employees);
-  }
 
-  List<Employee> getEmployees() {
-    return [
-      Employee(10001, 'James', 'Project Lead', 20000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10002, 'Kathryn', 'Manager', 30000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10003, 'Lara', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10004, 'Michael', 'Designer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10005, 'Martin', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10006, 'Newberry', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10007, 'Balnc', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10008, 'Perry', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10009, 'Gable', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8),
-      // Employee(10010, 'Grimes', 'Developer', 15000, 1, 2, 3, 4, 5, 6, 7, 8)
-    ];
+    // employeeDataSource = ProductDataSource(employees: employees);
   }
 
   // final CustomColumnSizer _customColumnSizer = CustomColumnSizer();
@@ -60,260 +46,253 @@ class _ProductsTableState extends State<ProductsTable> {
       // height: double.infinity,
       // height: double.infinity,
       color: MyColors.mainContainer,
-      child: SfDataGrid(
-        // key: UniqueKey(),
+      child: BlocBuilder<ProductBloc, ProductState>(
+        builder: (context, state) {
+          if (state is ProductInitial) {
+            context.read<ProductBloc>().add(const FetchAllProductEvent());
+            // BlocProvider.of<ProductBloc>(context).add(const FetchAllProductEvent());
+          }
+          if (state is DisplayAllProductsState) {
+            if (state.products.isNotEmpty) {
+              return SfDataGrid(
+                // key: UniqueKey(),
 
-        source: employeeDataSource,
-        columns: <GridColumn>[
-          GridColumn(
-              columnName: 'code',
-              width: columnWidths['code']!,
-              label: Container(
-                  padding: const EdgeInsets.all(16.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Code',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ))),
-          GridColumn(
-            columnName: 'name',
-            width: columnWidths['name']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Name',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'group',
-            width: columnWidths['group']!,
-            // width: 120,
+                source: ProductDataSource(products: state.products),
+                columns: <GridColumn>[
+                  GridColumn(
+                      columnName: 'code',
+                      width: columnWidths['code']!,
+                      label: Container(
+                          padding: const EdgeInsets.all(16.0),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            'Code',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ))),
+                  GridColumn(
+                    columnName: 'name',
+                    width: columnWidths['name']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Name',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'group',
+                    width: columnWidths['group']!,
+                    // width: 120,
 
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Group',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'barcode',
-            width: columnWidths['barcode']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Barcode',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'cost',
-            width: columnWidths['cost']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Cost',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'sale_price_before_tax',
-            width: columnWidths['sale_price_before_tax']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Sale price before tax',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'taxes',
-            width: columnWidths['taxes']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Taxes',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'sale_price',
-            width: columnWidths['sale_price']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Sale price',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'active',
-            width: columnWidths['active']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Active',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'unit_of_measurement',
-            width: columnWidths['unit_of_measurement']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Unit of measurement',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'created',
-            width: columnWidths['created']!,
-            label: Container(
-              padding: const EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Created',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridColumn(
-            columnName: 'updated',
-            width: columnWidths['updated']!,
-            label: Container(
-              // padding: EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              child: const Text(
-                'Updated',
-                overflow: TextOverflow.ellipsis,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-        ],
-        allowColumnsResizing: true,
-        onColumnResizeUpdate: (details) {
-          setState(() {
-            if (details.width > 40) {
-              columnWidths[details.column.columnName] = details.width;
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Group',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'barcode',
+                    width: columnWidths['barcode']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Barcode',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'cost',
+                    width: columnWidths['cost']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Cost',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'sale_price_before_tax',
+                    width: columnWidths['sale_price_before_tax']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Sale price before tax',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'taxes',
+                    width: columnWidths['taxes']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Taxes',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'sale_price',
+                    width: columnWidths['sale_price']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Sale price',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'active',
+                    width: columnWidths['active']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Active',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'unit_of_measurement',
+                    width: columnWidths['unit_of_measurement']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Unit of measurement',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'created',
+                    width: columnWidths['created']!,
+                    label: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Created',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  GridColumn(
+                    columnName: 'updated',
+                    width: columnWidths['updated']!,
+                    label: Container(
+                      // padding: EdgeInsets.all(16.0),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Updated',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
+                allowColumnsResizing: true,
+                onColumnResizeUpdate: (details) {
+                  setState(() {
+                    if (details.width > 40) {
+                      columnWidths[details.column.columnName] = details.width;
+                    }
+                  });
+                  return true;
+                },
+                allowSorting: true,
+
+                // showCheckboxColumn: true,
+                selectionMode: SelectionMode.multiple,
+                // defaultColumnWidth: double.maxFinite,
+                columnWidthCalculationRange:
+                    ColumnWidthCalculationRange.allRows,
+                // columnSizer: _customColumnSizer,
+                columnWidthMode: ColumnWidthMode.fitByColumnName,
+                // shrinkWrapColumns: true,
+                // defaultColumnWidth: 120,
+                // navigationMode: GridNavigationMode.cell,
+                isScrollbarAlwaysShown: true,
+              );
             }
-          });
-          return true;
+          }
+          return Center(
+              child: Text('empty'.toUpperCase(),
+                  style: const TextStyle(fontSize: 21)));
         },
-        allowSorting: true,
-
-        // showCheckboxColumn: true,
-        selectionMode: SelectionMode.multiple,
-        // defaultColumnWidth: double.maxFinite,
-        columnWidthCalculationRange: ColumnWidthCalculationRange.allRows,
-        // columnSizer: _customColumnSizer,
-        columnWidthMode: ColumnWidthMode.fitByColumnName,
-        // shrinkWrapColumns: true,
-        // defaultColumnWidth: 120,
-        // navigationMode: GridNavigationMode.cell,
-        isScrollbarAlwaysShown: true,
       ),
     );
   }
 }
 
-class Employee {
-  Employee(
-    this.id,
-    this.name,
-    this.designation,
-    this.salary,
-    this.a,
-    this.b,
-    this.c,
-    this.d,
-    this.e,
-    this.f,
-    this.g,
-    this.h,
-  );
-  final int id;
-  final String name;
-  final String designation;
-  final int salary;
-  final int a;
-  final int b;
-  final int c;
-  final int d;
-  final int e;
-  final int f;
-  final int g;
-  final int h;
-}
-
-class EmployeeDataSource extends DataGridSource {
-  EmployeeDataSource({required List<Employee> employees}) {
-    _employees = employees
-        .map<DataGridRow>((e) => DataGridRow(cells: [
-              DataGridCell<int>(columnName: 'id', value: e.id),
-              DataGridCell<String>(columnName: 'name', value: e.name),
+class ProductDataSource extends DataGridSource {
+  ProductDataSource({required List<Product> products}) {
+    _products = products
+        .map<DataGridRow>((p) => DataGridRow(cells: [
+              DataGridCell<String>(columnName: 'code', value: p.code),
+              DataGridCell<String>(columnName: 'name', value: p.name),
+              DataGridCell<String>(columnName: 'group', value: p.group),
               DataGridCell<String>(
-                  columnName: 'designation', value: e.designation),
-              DataGridCell<int>(columnName: 'salary', value: e.salary),
-              DataGridCell<int>(columnName: 'a', value: e.a),
-              DataGridCell<int>(columnName: 'b', value: e.b),
-              DataGridCell<int>(columnName: 'c', value: e.c),
-              DataGridCell<int>(columnName: 'd', value: e.d),
-              DataGridCell<int>(columnName: 'e', value: e.e),
-              DataGridCell<int>(columnName: 'f', value: e.f),
-              DataGridCell<int>(columnName: 'g', value: e.g),
-              DataGridCell<int>(columnName: 'h', value: e.h),
+                  columnName: 'barcode', value: p.barcode.join(', ')),
+              DataGridCell<double>(columnName: 'cost', value: p.cost),
+              DataGridCell<double>(
+                  columnName: 'sale_price_before_tax', value: p.salePrice),
+              const DataGridCell<int>(columnName: 'taxes', value: -1),
+              DataGridCell<double>(
+                  columnName: 'sale_price', value: p.salePrice),
+              DataGridCell<String>(
+                  columnName: 'active', value: p.isActive.toString()),
+              DataGridCell<String>(
+                  columnName: 'unit_of_measurement',
+                  value: p.unitOfMeasurement),
+              DataGridCell<String>(columnName: 'created', value: p.createdAt),
+              DataGridCell<String>(columnName: 'updated', value: p.updatedAt),
             ]))
         .toList();
   }
 
-  List<DataGridRow> _employees = [];
+  List<DataGridRow> _products = [];
 
   @override
-  List<DataGridRow> get rows => _employees;
+  List<DataGridRow> get rows => _products;
 
   @override
   DataGridRowAdapter? buildRow(DataGridRow row) {

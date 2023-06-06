@@ -46,9 +46,14 @@ class Yoho extends StatelessWidget {
                                         Text('Name: ${state.products[i].name}'),
                                         Text('code: ${state.products[i].code}'),
                                         Text('cost: ${state.products[i].cost}'),
-                                        Image.memory(
-                                          state.products[i].image!,
-                                        ),
+                                        state.products[i].image != null
+                                            ? Image.memory(
+                                                state.products[i].image!)
+                                            : Center(
+                                                child: Text(
+                                                    'empty'.toUpperCase(),
+                                                    style: const TextStyle(
+                                                        fontSize: 21))),
                                       ],
                                     ))));
                       }),

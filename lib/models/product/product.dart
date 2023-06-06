@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:hive/hive.dart';
+import 'package:intl/intl.dart';
 
 part 'product.g.dart';
 
@@ -74,4 +75,10 @@ class Product extends HiveObject {
 
   @HiveField(22)
   late List<String> comments;
+
+  @HiveField(23)
+  String createdAt = DateFormat('dd/MM/yyyy h:mm a').format(DateTime.now());
+
+  @HiveField(24)
+  String updatedAt = DateFormat('dd/MM/yyyy h:mm a').format(DateTime.now());
 }

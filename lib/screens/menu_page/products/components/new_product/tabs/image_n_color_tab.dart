@@ -289,8 +289,14 @@ class ImageAndColor extends StatelessWidget {
                                           color: i % 2 == 0
                                               ? Colors.blueAccent
                                               : Colors.brown,
-                                          child: Image.memory(
-                                              state.products[i].image!),
+                                          child: state.products[i].image != null
+                                              ? Image.memory(
+                                                  state.products[i].image!)
+                                              : Center(
+                                                  child: Text(
+                                                      'empty'.toUpperCase(),
+                                                      style: const TextStyle(
+                                                          fontSize: 21))),
                                         )));
                               }),
                         ),
